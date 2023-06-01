@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic_language">
+    <sys_cb_topic_language action="INSERT_OR_UPDATE">
+        <cb_topic_id display_value="Remove End-User Account">d14d2286dbcf8d50e6cb93afaa961941</cb_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"node_id":"26b00e23c9ea49b2a8c14bc9b54938f6","variable_name":"usertoberemoved","nlu_entity":"","nlu_entity_label":""},{"node_id":"be1950918660420da7b5ac9cbe41f723","variable_name":"rightfax_deactivated1","nlu_entity":"","nlu_entity_label":""},{"node_id":"e084da3e877b4a0f8c6185a468a92b99","variable_name":"mailboxdeactivated2","nlu_entity":"","nlu_entity_label":""},{"node_id":"173a85e098e74432b5b3cc6bc28e3bcf","variable_name":"extendedaccessneeded2","nlu_entity":"","nlu_entity_label":""},{"node_id":"07ae1168ee004adf8fa3524de890d618","variable_name":"notes_comments","nlu_entity":"","nlu_entity_label":""},{"node_id":"9e1cff6ff40f47b8abd4599e492f08f8","variable_name":"scenerios","nlu_entity":"","nlu_entity_label":""},{"node_id":"e379133b24b4421297bd9d87c04032bf","variable_name":"usersaccesstoaccount","nlu_entity":"","nlu_entity_label":""},{"node_id":"f36ea3af57e94eaba57969762bf96d68","variable_name":"enddateextendedaccess","nlu_entity":"","nlu_entity_label":""},{"node_id":"8200cef0f4884a4c895b5fdbaf73301e","variable_name":"extendedaccess_enddate2","nlu_entity":"DATE","nlu_entity_label":"DATE"},{"node_id":"03647d8197824b95be062b98eb128d76","variable_name":"outofofficeneeded","nlu_entity":"","nlu_entity_label":""},{"node_id":"147d96535ef042d5893184e12d7cd65e","variable_name":"emailhiddengal","nlu_entity":"","nlu_entity_label":""},{"node_id":"a521bb2896f345a4ba0a0489bc647221","variable_name":"mailboxreceivemessages","nlu_entity":"","nlu_entity_label":""},{"node_id":"67d0ef62e00b4b2a84dc3caa3efec7ad","variable_name":"out_of_office_message_detail","nlu_entity":"","nlu_entity_label":""},{"node_id":"9d0c053e453c4068b291552563af5ba1","variable_name":"extendedaccess_mailbox","nlu_entity":"","nlu_entity_label":""},{"node_id":"c4e3027053be46f8b734dd44c1d6db5a","variable_name":"extendedaccess_onedrive","nlu_entity":"","nlu_entity_label":""},{"node_id":"e64e10fef6dc4538a4adf9754c23ab78","variable_name":"extendedaccess_sharepoint","nlu_entity":"","nlu_entity_label":""},{"node_id":"c8101dbfad8242c0b5fbf41fc811fe6d","variable_name":"extendedaccess_pc","nlu_entity":"","nlu_entity_label":""},{"node_id":"43726423ee49466cae97ff3792621a4a","variable_name":"extendedaccess_shareddrive","nlu_entity":"","nlu_entity_label":""},{"node_id":"020f0410c87b48859cc7b53e6d8c3ba6","variable_name":"assigned_caller","nlu_entity":"","nlu_entity_label":""},{"node_id":"487b1b9f0c9e4ad798894d3d5e21185b","variable_name":"test","nlu_entity":"","nlu_entity_label":""},{"node_id":"0d07b95dd7984259a08f8c18f7ad503c","variable_name":"rightfax_deactivated_2","nlu_entity":"","nlu_entity_label":""},{"node_id":"1113d103af8e4a3b93182ca752a10e52","variable_name":"rightfax_deactivated","nlu_entity":"","nlu_entity_label":""},{"node_id":"866313ac5d7c4013b285a048c76d6feb","variable_name":"mailboxdeactivated","nlu_entity":"","nlu_entity_label":""},{"node_id":"ff8357639bad4bac81b0f70647eb51d1","variable_name":"extendedaccessneeded","nlu_entity":"","nlu_entity_label":""},{"node_id":"9c1b395c0ecf48a68a92dd449dfa01eb","variable_name":"ticket_number","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>Remove End User Account</nlu_intent>
+        <nlu_intent_label>Remove End User Account</nlu_intent_label>
+        <nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model>
+        <nlu_model_label>OC Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cb_topic_language</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-04-27 20:01:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>356fe5b6dbcf0110e6cb93afaa9619e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_language_356fe5b6dbcf0110e6cb93afaa9619e6</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-18 17:47:48</sys_updated_on>
+    </sys_cb_topic_language>
+</record_update>

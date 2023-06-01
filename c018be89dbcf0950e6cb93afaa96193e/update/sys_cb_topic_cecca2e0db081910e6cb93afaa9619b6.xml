@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "b05224cf7d404130a0ceaf9017bc2b67": {
+          "id": "b05224cf7d404130a0ceaf9017bc2b67",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "12ccc85daab143c7963c2566dce3cd0b": {
+          "id": "12ccc85daab143c7963c2566dce3cd0b",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "bae5c4e7b2da466ab8cee382a7b7b30d": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to create a new email account?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "e88e165e67ae4d5e8677631b11feabc5",
+          "id": "bae5c4e7b2da466ab8cee382a7b7b30d",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "94a292cf038c4737a684cf943274f390": {
+          "id": "94a292cf038c4737a684cf943274f390",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "c5f5afb50304441c9fd5a3eb3dea8ee4": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "RequestedUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who needs to create the new email account?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "3a486c9de615482e91d6309d934b1844",
+          "id": "c5f5afb50304441c9fd5a3eb3dea8ee4",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_idANYTHING"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "4eab615f54ae447bb85086472df06608": {
+          "id": "4eab615f54ae447bb85086472df06608",
+          "stepType": "Prompt",
+          "name": "new email",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the preferred email address?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "ced1ed004c704f3ba4e0cbdf53c74817",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "0ecf8427a8fd4450a1252af13181b283": {
+          "id": "0ecf8427a8fd4450a1252af13181b283",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "56e3e8dc9c4949a283d69fbdfabcb83f",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 62",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDc5NzUzNTYzMCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "5ddd1896278c411f9e53015107d6be3b": {
+          "id": "5ddd1896278c411f9e53015107d6be3b",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': '186d917a6fab7980575967ddbb3ee4f2',\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'new_email': vaInputs.new_email.getValue(),\n\t}\n};\ncart.setRequestedFor(vaInputs.requesteduser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "2d37e470286347dcb50e7bf447b6a8d4": {
+          "id": "2d37e470286347dcb50e7bf447b6a8d4",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Number",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket Number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "8bd47ea9109e4bf2bcbeedc9351a32cc",
+          "edgeType": "Edge",
+          "source": "bae5c4e7b2da466ab8cee382a7b7b30d",
+          "target": "94a292cf038c4737a684cf943274f390",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c44aa65dd5f54f22a012618eeaebf3ec",
+          "edgeType": "Branch",
+          "source": "94a292cf038c4737a684cf943274f390",
+          "target": "12ccc85daab143c7963c2566dce3cd0b",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "32015867400c4dd6ac60730ad1ce4cad",
+          "edgeType": "Branch",
+          "source": "94a292cf038c4737a684cf943274f390",
+          "target": "c5f5afb50304441c9fd5a3eb3dea8ee4",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "60047fea7fb64b3dba71bc886eb9c6f0",
+          "edgeType": "Edge",
+          "source": "c5f5afb50304441c9fd5a3eb3dea8ee4",
+          "target": "4eab615f54ae447bb85086472df06608",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c5948ba0bc944ad5b202aa48577abd9c",
+          "edgeType": "Edge",
+          "source": "b05224cf7d404130a0ceaf9017bc2b67",
+          "target": "0ecf8427a8fd4450a1252af13181b283",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "4f40a26810f24ac88d4e193780dffa4d",
+          "edgeType": "Edge",
+          "source": "0ecf8427a8fd4450a1252af13181b283",
+          "target": "bae5c4e7b2da466ab8cee382a7b7b30d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6f1572c651104db6b2de095ed6afc325",
+          "edgeType": "Edge",
+          "source": "4eab615f54ae447bb85086472df06608",
+          "target": "5ddd1896278c411f9e53015107d6be3b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c523e20577324f1e9d19bcaa58f31d73",
+          "edgeType": "Edge",
+          "source": "5ddd1896278c411f9e53015107d6be3b",
+          "target": "2d37e470286347dcb50e7bf447b6a8d4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e39bf375bd1d46669480f8c17785c675",
+          "edgeType": "Edge",
+          "source": "2d37e470286347dcb50e7bf447b6a8d4",
+          "target": "12ccc85daab143c7963c2566dce3cd0b",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "e88e165e67ae4d5e8677631b11feabc5": {
+      "id": "e88e165e67ae4d5e8677631b11feabc5",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "3a486c9de615482e91d6309d934b1844": {
+      "id": "3a486c9de615482e91d6309d934b1844",
+      "name": "requesteduser",
+      "label": "RequestedUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "ced1ed004c704f3ba4e0cbdf53c74817": {
+      "id": "ced1ed004c704f3ba4e0cbdf53c74817",
+      "name": "new_email",
+      "label": "New Email",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NDc5NzUwNDk1NyBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "56e3e8dc9c4949a283d69fbdfabcb83f": {
+      "id": "56e3e8dc9c4949a283d69fbdfabcb83f",
+      "name": "ticket_number",
+      "label": "Ticket Number",
+      "varType": "string",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>New Email Account</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>New Email Account</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-09 17:46:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>cecca2e0db081910e6cb93afaa9619b6</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>New Email Account</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_cecca2e0db081910e6cb93afaa9619b6</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-09 18:04:18</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=cecca2e0db081910e6cb93afaa9619b6"/>
+</record_update>

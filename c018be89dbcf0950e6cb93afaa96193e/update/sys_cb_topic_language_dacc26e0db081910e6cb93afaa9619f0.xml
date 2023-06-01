@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic_language">
+    <sys_cb_topic_language action="INSERT_OR_UPDATE">
+        <cb_topic_id display_value="New Email Account">cecca2e0db081910e6cb93afaa9619b6</cb_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"node_id":"bae5c4e7b2da466ab8cee382a7b7b30d","variable_name":"title","nlu_entity":"","nlu_entity_label":""},{"node_id":"c5f5afb50304441c9fd5a3eb3dea8ee4","variable_name":"requesteduser","nlu_entity":"","nlu_entity_label":""},{"node_id":"4eab615f54ae447bb85086472df06608","variable_name":"new_email","nlu_entity":"","nlu_entity_label":""},{"node_id":"0ecf8427a8fd4450a1252af13181b283","variable_name":"ticket_number","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>New Email Account</nlu_intent>
+        <nlu_intent_label>New Email Account</nlu_intent_label>
+        <nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model>
+        <nlu_model_label>OC Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cb_topic_language</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-09 17:46:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>dacc26e0db081910e6cb93afaa9619f0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_language_dacc26e0db081910e6cb93afaa9619f0</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-09 18:04:19</sys_updated_on>
+    </sys_cb_topic_language>
+</record_update>

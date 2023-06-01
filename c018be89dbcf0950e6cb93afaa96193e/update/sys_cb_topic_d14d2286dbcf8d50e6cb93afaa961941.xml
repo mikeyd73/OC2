@@ -1,0 +1,2136 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "d416c851bf564dea9874eeaa847f57d7": {
+          "id": "d416c851bf564dea9874eeaa847f57d7",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "cef3e862c6ad46ebb1a868a44ff656cb": {
+          "id": "cef3e862c6ad46ebb1a868a44ff656cb",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "3eb5444befde43cd8d36fb066c7ff9dc": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Would you like to remove an end user account"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "3ffd5e7bcd0646fca10ea5c1b21c8c11",
+          "id": "3eb5444befde43cd8d36fb066c7ff9dc",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "22ca27205a8e44ec80669cb45d5c049d": {
+          "id": "22ca27205a8e44ec80669cb45d5c049d",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "80b26f19aba54899a7d2a7aabafcbefe": {
+          "stepType": "ChoicePrompt",
+          "name": "Caller Verification",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Are you "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.user.name}}",
+                      "displayValue": "Input Variables➛User➛Name"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": "? (We will ask who is having the account removed in a later question)"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "96d59cba04e54bc6809cc7fafdb388a4",
+          "id": "80b26f19aba54899a7d2a7aabafcbefe",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "8750f874cc404f998942ab0812d29fcb": {
+          "id": "8750f874cc404f998942ab0812d29fcb",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "091e57bfb14f4c85ae68a72855900a93": {
+          "id": "091e57bfb14f4c85ae68a72855900a93",
+          "name": "Assign Caller",
+          "script": "(function execute() {\n    /* Code your scripted action here. For example, you might update a\n       record based on conditional logic:\n\n        if (vaVars.my_flag == 'say hello') {\n            gs.info('hi there');\n        } else {\n            gs.info('bye now');\n        }\n    */\n    vaVars.caller=vaInputs.user;\n    vaVars.callerString=vaInputs.user.getValue(\"user_name\");\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "26b00e23c9ea49b2a8c14bc9b54938f6": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "userToBeRemoved",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who's account will be removed"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "b67a6242d41a42958d177c78e851905e",
+          "id": "26b00e23c9ea49b2a8c14bc9b54938f6",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users were found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "a09820b187b2413f86609199a4f268cc": {
+          "id": "a09820b187b2413f86609199a4f268cc",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "07ae1168ee004adf8fa3524de890d618": {
+          "id": "07ae1168ee004adf8fa3524de890d618",
+          "stepType": "Prompt",
+          "name": "notes_comments",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Any additional Notes/Comments"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "af57cccbca5b4d258fae6fbba83e0426",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "9e1cff6ff40f47b8abd4599e492f08f8": {
+          "stepType": "ChoicePrompt",
+          "name": "Scenerios",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What scenerio is correct"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "3c8e3644a10e443a9c46dcffdec4a7ff",
+          "id": "9e1cff6ff40f47b8abd4599e492f08f8",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "ec4c22a4a79342b385dadb5b35fa87f5": {
+          "id": "ec4c22a4a79342b385dadb5b35fa87f5",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "3b651ed0ffed4c398fb43df5825fa67a": {
+          "id": "3b651ed0ffed4c398fb43df5825fa67a",
+          "name": "Scenerio Script",
+          "script": "(function execute() {\n    /* Code your scripted action here. For example, you might update a\n       record based on conditional logic:\n\n        if (vaVars.my_flag == 'say hello') {\n            gs.info('hi there');\n        } else {\n            gs.info('bye now');\n        }\n    */\n    vaVars.scenerios=\"2\";\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "e13d279e78674b8db2e9d0d3bea45144": {
+          "id": "e13d279e78674b8db2e9d0d3bea45144",
+          "name": "Scenerio Script",
+          "script": "(function execute() {\n    /* Code your scripted action here. For example, you might update a\n       record based on conditional logic:\n\n        if (vaVars.my_flag == 'say hello') {\n            gs.info('hi there');\n        } else {\n            gs.info('bye now');\n        }\n    */\n    vaVars.scenerios=\"1\";\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "e379133b24b4421297bd9d87c04032bf": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "usersAccessToAccount",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who are the available users"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "2ed4755cde494d13a37259f3a89d29ff",
+          "id": "e379133b24b4421297bd9d87c04032bf",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "no users available"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "f36ea3af57e94eaba57969762bf96d68": {
+          "id": "f36ea3af57e94eaba57969762bf96d68",
+          "stepType": "Prompt",
+          "name": "endDateExtendedAccess",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the end date for the extended use"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "b9100068c87341b5bdb06753fd47228c"
+        },
+        "8200cef0f4884a4c895b5fdbaf73301e": {
+          "id": "8200cef0f4884a4c895b5fdbaf73301e",
+          "stepType": "Prompt",
+          "name": "extendedAccess_endDate2",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the end date of the extended use"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "785d55137a1648b89650eb49c0e20168"
+        },
+        "03647d8197824b95be062b98eb128d76": {
+          "stepType": "ChoicePrompt",
+          "name": "outOfOfficeNeeded",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Is a mailbox out of office message needed"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "726893dafc9d435589047beb9d79e9b2",
+          "id": "03647d8197824b95be062b98eb128d76",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "0c2701b95323400c90fcede016c5a80c": {
+          "id": "0c2701b95323400c90fcede016c5a80c",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "147d96535ef042d5893184e12d7cd65e": {
+          "stepType": "ChoicePrompt",
+          "name": "emailHiddenGAL",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Does the email address need to be hidden in the GAL"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "9391ac2ff32f4f39bf5a330cf16647e5",
+          "id": "147d96535ef042d5893184e12d7cd65e",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "a521bb2896f345a4ba0a0489bc647221": {
+          "stepType": "ChoicePrompt",
+          "name": "mailBoxReceiveMessages",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Does the mailbox need to continue to receive messages"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "e56805def6f848fb84208872d35c71e9",
+          "id": "a521bb2896f345a4ba0a0489bc647221",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "67d0ef62e00b4b2a84dc3caa3efec7ad": {
+          "id": "67d0ef62e00b4b2a84dc3caa3efec7ad",
+          "stepType": "Prompt",
+          "name": "out_of_office_message_detail",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What would you like the message to say?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "acaf12ce926d406aaa6a9b69f068ff37",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "3e86e9b95e284528991388f0dfe62324": {
+          "id": "3e86e9b95e284528991388f0dfe62324",
+          "stepType": "TextOutput",
+          "name": "Extended Access Title",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What extended access is needed"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "9d0c053e453c4068b291552563af5ba1": {
+          "stepType": "ChoicePrompt",
+          "name": "extendedAccess_mailbox",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Mailbox?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "c9cd71e1e6934a60bc95f4a9bf652ed4",
+          "id": "9d0c053e453c4068b291552563af5ba1",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "c4e3027053be46f8b734dd44c1d6db5a": {
+          "stepType": "ChoicePrompt",
+          "name": "extendedAccess_oneDrive",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "One Drive?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "3e49982cb858469ca7dcac5b978167d4",
+          "id": "c4e3027053be46f8b734dd44c1d6db5a",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "e64e10fef6dc4538a4adf9754c23ab78": {
+          "stepType": "ChoicePrompt",
+          "name": "extendedAccess_sharepoint",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "SharePoint?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "03cbc7bcd3334ed8b911611081445f06",
+          "id": "e64e10fef6dc4538a4adf9754c23ab78",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "c8101dbfad8242c0b5fbf41fc811fe6d": {
+          "stepType": "ChoicePrompt",
+          "name": "extendedAccess_pc",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "PC?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "61306dc22b3d4da1bbcd8348776a6574",
+          "id": "c8101dbfad8242c0b5fbf41fc811fe6d",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "43726423ee49466cae97ff3792621a4a": {
+          "stepType": "ChoicePrompt",
+          "name": "extendedAccess_sharedDrive",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Shared Drives - extended access"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "196bd6c8d379452bb087023723ae0b8f",
+          "id": "43726423ee49466cae97ff3792621a4a",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "020f0410c87b48859cc7b53e6d8c3ba6": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "Assigned Caller",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Select the caller"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "32f3950907994120a829604d52689b7d",
+          "id": "020f0410c87b48859cc7b53e6d8c3ba6",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "no records found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "0b1e7935eacb43eeb40cfd62f3386b11": {
+          "id": "0b1e7935eacb43eeb40cfd62f3386b11",
+          "name": "Assigned Caller Script",
+          "script": "(function execute() {\n    /* Code your scripted action here. For example, you might update a\n       record based on conditional logic:\n\n        if (vaVars.my_flag == 'say hello') {\n            gs.info('hi there');\n        } else {\n            gs.info('bye now');\n        }\n    */\n    vaVars.caller=vaInputs.assigned_caller;\n    vaVars.callerString=vaInputs.assigned_caller.getValue('user_name');\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "c6b803b12ae34973abe8581de66de587": {
+          "id": "c6b803b12ae34973abe8581de66de587",
+          "name": "create request",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\n//var tempCaller = outUser.getUserByID('-abel.tuter');\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': '1db9b28ddbcf0950e6cb93afaa961990',\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'notes_comments': vaInputs.notes_comments.getValue(),\n\t\t'rightFax_deactivated': vaInputs.rightfax_deactivated.getValue(),\n\t\t'extendedAccess_mailbox': vaInputs.extendedaccess_mailbox.getValue(),\n\t\t'extendedAccess_pc': vaInputs.extendedaccess_pc.getValue(),\n\t\t'extendedAccess_sharedDrive': vaInputs.extendedaccess_shareddrive.getValue(),\n\t\t'extendedAccess_sharepoint': vaInputs.extendedaccess_sharepoint.getValue(),\n\t\t'mailboxDeactivated': vaInputs.mailboxdeactivated.getValue(),\n\t\t'mailBoxReceiveMessages': vaInputs.mailboxreceivemessages.getValue(),\n\t\t//'caller' : vaVars.usertoberemoved.getValue('Label'),\n\t\t'userToBeRemoved' : vaInputs.usertoberemoved.getValue('name').toString(),\n\t\t//'userToBeRemoved' : 'abraham.lincoln',\n\t\t'endDateExtendedAccess' : vaInputs.enddateextendedaccess.toString(),\n\t\t'extendedAccess_endDate2' : vaInputs.extendedaccess_enddate2.toString(),\n\t\t'extendedAccess_oneDrive': vaInputs.extendedaccess_onedrive.getValue()\n\t\t\n\t}\n};\ncart.setRequestedFor(vaInputs.usertoberemoved);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "1113d103af8e4a3b93182ca752a10e52": {
+          "stepType": "ChoicePrompt",
+          "name": "rightfax_deactivated",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want right fax deactivated"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "70f264419d0d48f2a9d966fdc959c986",
+          "id": "1113d103af8e4a3b93182ca752a10e52",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "866313ac5d7c4013b285a048c76d6feb": {
+          "stepType": "ChoicePrompt",
+          "name": "mailboxDeactivated",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want the mailbox to be deactivated"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "bf90f7ba653e4b43a5fd5d8a876e069f",
+          "id": "866313ac5d7c4013b285a048c76d6feb",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "ff8357639bad4bac81b0f70647eb51d1": {
+          "stepType": "ChoicePrompt",
+          "name": "extendedAccessNeeded",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Does the account to be deactivated require Extended Access by someone(s)"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "f6f18b5da7fe4c42b024c3c67ef0607f",
+          "id": "ff8357639bad4bac81b0f70647eb51d1",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "9c1b395c0ecf48a68a92dd449dfa01eb": {
+          "id": "9c1b395c0ecf48a68a92dd449dfa01eb",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "4740c25773954317ad767d9c2d6e2c3e",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 52",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1MjMwMDA0MzU2MiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "b3cee4c73f2a474abaffe55ec6904f42": {
+          "id": "b3cee4c73f2a474abaffe55ec6904f42",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Number",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket Number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "bcebdc0134384c93b44fb75c841d1004",
+          "edgeType": "Edge",
+          "source": "07ae1168ee004adf8fa3524de890d618",
+          "target": "c6b803b12ae34973abe8581de66de587",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5c9639c85e024ccea0e75be45798ef08",
+          "edgeType": "Edge",
+          "source": "8200cef0f4884a4c895b5fdbaf73301e",
+          "target": "07ae1168ee004adf8fa3524de890d618",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "dc7923c042bf41c5912b17477af6add9",
+          "edgeType": "Edge",
+          "source": "091e57bfb14f4c85ae68a72855900a93",
+          "target": "26b00e23c9ea49b2a8c14bc9b54938f6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0aae2a2f1ec34d9e895a88c6ca33bdea",
+          "edgeType": "Edge",
+          "source": "0b1e7935eacb43eeb40cfd62f3386b11",
+          "target": "26b00e23c9ea49b2a8c14bc9b54938f6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "38a537058c594714bc58b4bd4d084e5a",
+          "edgeType": "Edge",
+          "source": "ff8357639bad4bac81b0f70647eb51d1",
+          "target": "a09820b187b2413f86609199a4f268cc",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d14f9ad2b32b4499a8024dc723bce7b3",
+          "edgeType": "Branch",
+          "source": "8750f874cc404f998942ab0812d29fcb",
+          "target": "091e57bfb14f4c85ae68a72855900a93",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.caller_verification=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "d9ea80260394469285aa9240566f7613",
+          "edgeType": "Edge",
+          "source": "e13d279e78674b8db2e9d0d3bea45144",
+          "target": "e379133b24b4421297bd9d87c04032bf",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2c22f22c33074e2598841b454ffb7d5f",
+          "edgeType": "Branch",
+          "source": "22ca27205a8e44ec80669cb45d5c049d",
+          "target": "cef3e862c6ad46ebb1a868a44ff656cb",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "63f092e29f484ae7b69d3c7f0ffd1625",
+          "edgeType": "Edge",
+          "source": "3eb5444befde43cd8d36fb066c7ff9dc",
+          "target": "22ca27205a8e44ec80669cb45d5c049d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9275fe9443644ade92a55802aba8e224",
+          "edgeType": "Branch",
+          "source": "22ca27205a8e44ec80669cb45d5c049d",
+          "target": "80b26f19aba54899a7d2a7aabafcbefe",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "c05963260fcc46bb9f1897a6b580cd60",
+          "edgeType": "Edge",
+          "source": "80b26f19aba54899a7d2a7aabafcbefe",
+          "target": "8750f874cc404f998942ab0812d29fcb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d3c7757d0bd5401faabebdde1c1928ed",
+          "edgeType": "Branch",
+          "source": "a09820b187b2413f86609199a4f268cc",
+          "target": "07ae1168ee004adf8fa3524de890d618",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.extendedaccessneeded=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "dba845b6c69847ddb71b22f5796fc0a2",
+          "edgeType": "Branch",
+          "source": "a09820b187b2413f86609199a4f268cc",
+          "target": "9e1cff6ff40f47b8abd4599e492f08f8",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.extendedaccessneeded=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "670e7f70309040daa63afed24cb561d3",
+          "edgeType": "Edge",
+          "source": "9e1cff6ff40f47b8abd4599e492f08f8",
+          "target": "ec4c22a4a79342b385dadb5b35fa87f5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "38cdea90df924fa39c265f62540f1b6d",
+          "edgeType": "Branch",
+          "source": "ec4c22a4a79342b385dadb5b35fa87f5",
+          "target": "3b651ed0ffed4c398fb43df5825fa67a",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.scenerios=scenerio2",
+            "mode": "query"
+          },
+          "label": "Scenerio2"
+        },
+        {
+          "id": "349f15657ed84149bea56265eb39a1a1",
+          "edgeType": "Branch",
+          "source": "ec4c22a4a79342b385dadb5b35fa87f5",
+          "target": "e13d279e78674b8db2e9d0d3bea45144",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.scenerios=scenerio1",
+            "mode": "query"
+          },
+          "label": "Scenerio1"
+        },
+        {
+          "id": "52f9a5eb76fb414788f74e556841f14b",
+          "edgeType": "Edge",
+          "source": "e379133b24b4421297bd9d87c04032bf",
+          "target": "f36ea3af57e94eaba57969762bf96d68",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e47a44d206fc41aa859d7e717c41597e",
+          "edgeType": "Edge",
+          "source": "3b651ed0ffed4c398fb43df5825fa67a",
+          "target": "8200cef0f4884a4c895b5fdbaf73301e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "52324ac742184032ac5b135f26eac09b",
+          "edgeType": "Edge",
+          "source": "f36ea3af57e94eaba57969762bf96d68",
+          "target": "03647d8197824b95be062b98eb128d76",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "620c220752c54c8ebeff816ee069e659",
+          "edgeType": "Edge",
+          "source": "03647d8197824b95be062b98eb128d76",
+          "target": "0c2701b95323400c90fcede016c5a80c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ba0a0d5bd37a4530b8377c64bc692a21",
+          "edgeType": "Branch",
+          "source": "0c2701b95323400c90fcede016c5a80c",
+          "target": "147d96535ef042d5893184e12d7cd65e",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.outofofficeneeded=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "833bef1eee8443f68554c1e897ae453a",
+          "edgeType": "Edge",
+          "source": "147d96535ef042d5893184e12d7cd65e",
+          "target": "a521bb2896f345a4ba0a0489bc647221",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b2edb13eef4940f686f42b2cad6233d0",
+          "edgeType": "Branch",
+          "source": "0c2701b95323400c90fcede016c5a80c",
+          "target": "67d0ef62e00b4b2a84dc3caa3efec7ad",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.outofofficeneeded=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "8a013af75f484d8596bf75213cefc5b8",
+          "edgeType": "Edge",
+          "source": "67d0ef62e00b4b2a84dc3caa3efec7ad",
+          "target": "147d96535ef042d5893184e12d7cd65e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6e46e42671f94d1193e8c9fcb38ec3a8",
+          "edgeType": "Edge",
+          "source": "a521bb2896f345a4ba0a0489bc647221",
+          "target": "3e86e9b95e284528991388f0dfe62324",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "063bc17739014e28a56b21f8927d211f",
+          "edgeType": "Edge",
+          "source": "3e86e9b95e284528991388f0dfe62324",
+          "target": "9d0c053e453c4068b291552563af5ba1",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "308adf8c4362468087a16a7807bd7f34",
+          "edgeType": "Edge",
+          "source": "9d0c053e453c4068b291552563af5ba1",
+          "target": "c4e3027053be46f8b734dd44c1d6db5a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1e75aed166774530b06ca528952499e3",
+          "edgeType": "Edge",
+          "source": "c4e3027053be46f8b734dd44c1d6db5a",
+          "target": "e64e10fef6dc4538a4adf9754c23ab78",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5b0c6ed2db6c4367acf20ad413559364",
+          "edgeType": "Edge",
+          "source": "e64e10fef6dc4538a4adf9754c23ab78",
+          "target": "c8101dbfad8242c0b5fbf41fc811fe6d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "70eeb98bebd848ccbc5a2444c7231630",
+          "edgeType": "Edge",
+          "source": "c8101dbfad8242c0b5fbf41fc811fe6d",
+          "target": "43726423ee49466cae97ff3792621a4a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2761b695a4184c9f8b4c524160ea8cb3",
+          "edgeType": "Edge",
+          "source": "43726423ee49466cae97ff3792621a4a",
+          "target": "07ae1168ee004adf8fa3524de890d618",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "664eeeede8794a2187329857b86edcaf",
+          "edgeType": "Branch",
+          "source": "8750f874cc404f998942ab0812d29fcb",
+          "target": "020f0410c87b48859cc7b53e6d8c3ba6",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.caller_verification=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "a381e4c628694603a9fe5643ba1e3e17",
+          "edgeType": "Edge",
+          "source": "020f0410c87b48859cc7b53e6d8c3ba6",
+          "target": "0b1e7935eacb43eeb40cfd62f3386b11",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c5b1acc40a76476a998fa4cfb66236b6",
+          "edgeType": "Edge",
+          "source": "26b00e23c9ea49b2a8c14bc9b54938f6",
+          "target": "1113d103af8e4a3b93182ca752a10e52",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2943a9e1d1504fb78f1e91a5c70b696d",
+          "edgeType": "Edge",
+          "source": "1113d103af8e4a3b93182ca752a10e52",
+          "target": "866313ac5d7c4013b285a048c76d6feb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1cc2fee74a2649718929cc2cbf26a327",
+          "edgeType": "Edge",
+          "source": "866313ac5d7c4013b285a048c76d6feb",
+          "target": "ff8357639bad4bac81b0f70647eb51d1",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "aff4e8f4370146df98600188e9c285d5",
+          "edgeType": "Edge",
+          "source": "d416c851bf564dea9874eeaa847f57d7",
+          "target": "9c1b395c0ecf48a68a92dd449dfa01eb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "01c87ad63ce64f0db4c7f61dc3d8ee16",
+          "edgeType": "Edge",
+          "source": "9c1b395c0ecf48a68a92dd449dfa01eb",
+          "target": "3eb5444befde43cd8d36fb066c7ff9dc",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d372924601034deeabe2eac838aaf549",
+          "edgeType": "Edge",
+          "source": "c6b803b12ae34973abe8581de66de587",
+          "target": "b3cee4c73f2a474abaffe55ec6904f42",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "852d9775cb8e48ac8c90a1c8ac2f4d04",
+          "edgeType": "Edge",
+          "source": "b3cee4c73f2a474abaffe55ec6904f42",
+          "target": "cef3e862c6ad46ebb1a868a44ff656cb",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "3ffd5e7bcd0646fca10ea5c1b21c8c11": {
+      "id": "3ffd5e7bcd0646fca10ea5c1b21c8c11",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "96d59cba04e54bc6809cc7fafdb388a4": {
+      "id": "96d59cba04e54bc6809cc7fafdb388a4",
+      "name": "caller_verification",
+      "label": "Caller Verification",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "504bd32197e640908f07451f3daae161": {
+      "id": "504bd32197e640908f07451f3daae161",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "name": "caller",
+      "label": "caller",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "11be0a0526074597b59a9ebc6ac5e612": {
+      "id": "11be0a0526074597b59a9ebc6ac5e612",
+      "value": {
+        "mode": "simple",
+        "value": "Todo"
+      },
+      "name": "manager",
+      "label": "manager",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "b67a6242d41a42958d177c78e851905e": {
+      "id": "b67a6242d41a42958d177c78e851905e",
+      "name": "usertoberemoved",
+      "label": "UserToBeRemoved",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "af57cccbca5b4d258fae6fbba83e0426": {
+      "id": "af57cccbca5b4d258fae6fbba83e0426",
+      "name": "notes_comments",
+      "label": "Notes_comments",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1MTI1Njc1NTM1OSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "3c8e3644a10e443a9c46dcffdec4a7ff": {
+      "id": "3c8e3644a10e443a9c46dcffdec4a7ff",
+      "name": "scenerios",
+      "label": "Scenerios",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Scenario 1: \"The owner of the account and/or other individuals need permissions to remain available for the account even though it is scheduled to be deactivated\"",
+          "value": "scenerio1"
+        },
+        {
+          "label": "Scenario 2: “Only the current owner of the account needs to keep extended and “Active” access to the account (user can still log in and use the account)\"",
+          "value": "scenerio2",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "4982e6bd641048479c17ae6b1dd50841": {
+      "id": "4982e6bd641048479c17ae6b1dd50841",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "scenerios",
+      "label": "scenerios",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "2ed4755cde494d13a37259f3a89d29ff": {
+      "id": "2ed4755cde494d13a37259f3a89d29ff",
+      "name": "usersaccesstoaccount",
+      "label": "UsersAccessToAccount",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "b9100068c87341b5bdb06753fd47228c": {
+      "id": "b9100068c87341b5bdb06753fd47228c",
+      "name": "enddateextendedaccess",
+      "label": "EndDateExtendedAccess",
+      "varType": "date_time",
+      "secure": false,
+      "category": "vaInputs",
+      "mode": "date_time"
+    },
+    "785d55137a1648b89650eb49c0e20168": {
+      "id": "785d55137a1648b89650eb49c0e20168",
+      "name": "extendedaccess_enddate2",
+      "label": "ExtendedAccess_endDate2",
+      "varType": "date_time",
+      "secure": false,
+      "category": "vaInputs",
+      "mode": "date"
+    },
+    "726893dafc9d435589047beb9d79e9b2": {
+      "id": "726893dafc9d435589047beb9d79e9b2",
+      "name": "outofofficeneeded",
+      "label": "OutOfOfficeNeeded",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "9391ac2ff32f4f39bf5a330cf16647e5": {
+      "id": "9391ac2ff32f4f39bf5a330cf16647e5",
+      "name": "emailhiddengal",
+      "label": "EmailHiddenGAL",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "e56805def6f848fb84208872d35c71e9": {
+      "id": "e56805def6f848fb84208872d35c71e9",
+      "name": "mailboxreceivemessages",
+      "label": "MailBoxReceiveMessages",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "acaf12ce926d406aaa6a9b69f068ff37": {
+      "id": "acaf12ce926d406aaa6a9b69f068ff37",
+      "name": "out_of_office_message_detail",
+      "label": "Out_of_office_message_detail",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1MTI1Nzg1NjMwNSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "c9cd71e1e6934a60bc95f4a9bf652ed4": {
+      "id": "c9cd71e1e6934a60bc95f4a9bf652ed4",
+      "name": "extendedaccess_mailbox",
+      "label": "ExtendedAccess_mailbox",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "3e49982cb858469ca7dcac5b978167d4": {
+      "id": "3e49982cb858469ca7dcac5b978167d4",
+      "name": "extendedaccess_onedrive",
+      "label": "ExtendedAccess_oneDrive",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "03cbc7bcd3334ed8b911611081445f06": {
+      "id": "03cbc7bcd3334ed8b911611081445f06",
+      "name": "extendedaccess_sharepoint",
+      "label": "ExtendedAccess_sharepoint",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "61306dc22b3d4da1bbcd8348776a6574": {
+      "id": "61306dc22b3d4da1bbcd8348776a6574",
+      "name": "extendedaccess_pc",
+      "label": "ExtendedAccess_pc",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "196bd6c8d379452bb087023723ae0b8f": {
+      "id": "196bd6c8d379452bb087023723ae0b8f",
+      "name": "extendedaccess_shareddrive",
+      "label": "ExtendedAccess_sharedDrive",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "32f3950907994120a829604d52689b7d": {
+      "id": "32f3950907994120a829604d52689b7d",
+      "name": "assigned_caller",
+      "label": "Assigned Caller",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "70f264419d0d48f2a9d966fdc959c986": {
+      "id": "70f264419d0d48f2a9d966fdc959c986",
+      "name": "rightfax_deactivated",
+      "label": "Rightfax_deactivated",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "bf90f7ba653e4b43a5fd5d8a876e069f": {
+      "id": "bf90f7ba653e4b43a5fd5d8a876e069f",
+      "name": "mailboxdeactivated",
+      "label": "MailboxDeactivated",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "f6f18b5da7fe4c42b024c3c67ef0607f": {
+      "id": "f6f18b5da7fe4c42b024c3c67ef0607f",
+      "name": "extendedaccessneeded",
+      "label": "ExtendedAccessNeeded",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "4740c25773954317ad767d9c2d6e2c3e": {
+      "id": "4740c25773954317ad767d9c2d6e2c3e",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "2a773ca997524ea2b8e08353e168e1c6": {
+      "id": "2a773ca997524ea2b8e08353e168e1c6",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "callername",
+      "label": "callername",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "fd63facdf91441c1afb5340bb73f363f": {
+      "id": "fd63facdf91441c1afb5340bb73f363f",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "callerString",
+      "label": "callerString",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "fa324beffddf49b6900df256c13ae6ef": {
+      "id": "fa324beffddf49b6900df256c13ae6ef",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "scriptenddate2",
+      "label": "scriptenddate2",
+      "varType": "script",
+      "category": "vaVars"
+    }
+  }
+}</graph>
+        <key_phrases>Remove End-User Account</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Remove End-User Account</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>user</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-04-25 16:36:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>d14d2286dbcf8d50e6cb93afaa961941</sys_id>
+        <sys_mod_count>210</sys_mod_count>
+        <sys_name>Remove End-User Account</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_d14d2286dbcf8d50e6cb93afaa961941</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-18 18:50:21</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=d14d2286dbcf8d50e6cb93afaa961941"/>
+</record_update>

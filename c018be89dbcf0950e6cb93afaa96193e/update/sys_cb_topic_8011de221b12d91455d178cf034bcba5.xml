@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{"graph_api_version":"1.0.36","variables":{},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"44f59d03ae694cac998e7282962f5c7a":{"id":"44f59d03ae694cac998e7282962f5c7a","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"6a899740cf1f461b8a0ffdeb9b0a6c92":{"id":"6a899740cf1f461b8a0ffdeb9b0a6c92","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}}},"edges":[{"id":"e78c550761d24f079cab429bf09154a0","edgeType":"Edge","source":"44f59d03ae694cac998e7282962f5c7a","target":"6a899740cf1f461b8a0ffdeb9b0a6c92","sourcePort":"","targetPort":""}]}}}</graph>
+        <key_phrases>New Topic</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>New Topic</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-10-05 17:14:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>8011de221b12d91455d178cf034bcba5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Topic</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_8011de221b12d91455d178cf034bcba5</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-10-05 17:14:05</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=8011de221b12d91455d178cf034bcba5"/>
+</record_update>

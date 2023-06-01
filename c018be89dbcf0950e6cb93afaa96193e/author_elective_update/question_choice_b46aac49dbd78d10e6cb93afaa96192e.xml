@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <order>100</order>
+        <published_ref display_value="Scenario 1: &quot;The owner of the account and/or other individuals need permissions ">e5612fdfdbcb0510e6cb93afaa9619f7</published_ref>
+        <question display_value="Scenarios">bc6aac49dbd78d10e6cb93afaa96191f</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-04 14:46:14</sys_created_on>
+        <sys_id>b46aac49dbd78d10e6cb93afaa96192e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Scenario 1: "The owner of the account and/or other individuals need permissions </sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>question_choice_b46aac49dbd78d10e6cb93afaa96192e</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-04 14:46:14</sys_updated_on>
+        <text>Scenario 1: "The owner of the account and/or other individuals need permissions </text>
+        <value>scenario_1</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=b46aac49dbd78d10e6cb93afaa96192e"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</application>
+        <file_path/>
+        <instance_id>85f207696f9e420056007b2f5d3ee415</instance_id>
+        <instance_name>saicdemo1</instance_name>
+        <name>question_choice_b46aac49dbd78d10e6cb93afaa96192e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><order>100</order><published_ref display_value="Scenario 1: &quot;The owner of the account and/or other individuals need permissions ">e5612fdfdbcb0510e6cb93afaa9619f7</published_ref><question display_value="Scenarios">bc6aac49dbd78d10e6cb93afaa96191f</question><sys_class_name>question_choice</sys_class_name><sys_created_by>adminjon</sys_created_by><sys_created_on>2022-05-04 14:46:14</sys_created_on><sys_id>b46aac49dbd78d10e6cb93afaa96192e</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Scenario 1: "The owner of the account and/or other individuals need permissions </sys_name><sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package><sys_policy/><sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope><sys_update_name>question_choice_b46aac49dbd78d10e6cb93afaa96192e</sys_update_name><sys_updated_by>adminjon</sys_updated_by><sys_updated_on>2022-05-04 14:46:14</sys_updated_on><text>Scenario 1: "The owner of the account and/or other individuals need permissions </text><value>scenario_1</value></question_choice><fx_price action="delete_multiple" query="id=b46aac49dbd78d10e6cb93afaa96192e"/></record_update>]]></payload>
+        <payload_hash>-609361413</payload_hash>
+        <record_name>Scenario 1: "The owner of the account and/or other individuals need permissions </record_name>
+        <reverted_from/>
+        <source>c818be89dbcf0950e6cb93afaa961940</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-04 14:46:15</sys_created_on>
+        <sys_id>7c6aac49dbd78d10e6cb93afaa961930</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1808f8932e80000001</sys_recorded_at>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-04 14:46:15</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>b06aac49bad78d10ef3be1173f00d130</update_guid>
+        <update_guid_history>b06aac49bad78d10ef3be1173f00d130:-609361413</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Scenario 1: &quot;The owner of the account and/or other individuals need permissions ">51cc608ddbd78d10e6cb93afaa96192a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-04 14:56:39</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>3551d01f157143ee8f2b739f1ee93bd9</sys_id>
+        <sys_metadata>b46aac49dbd78d10e6cb93afaa96192e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Scenario 1: "The owner of the account and/or other individuals need permissions </sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_scope_delete display_value="">82a1a48d8e644a2684ce3d2556cef1a4</sys_scope_delete>
+        <sys_update_name>question_choice_b46aac49dbd78d10e6cb93afaa96192e</sys_update_name>
+        <sys_update_version display_value="question_choice_b46aac49dbd78d10e6cb93afaa96192e">7c6aac49dbd78d10e6cb93afaa961930</sys_update_version>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-04 14:56:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic_language">
+    <sys_cb_topic_language action="INSERT_OR_UPDATE">
+        <cb_topic_id display_value="New Hire">e9b5cf63db778110e6cb93afaa96197c</cb_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"node_id":"c8a26f8d5db847bdb6315d19cc7b17c9","variable_name":"title","nlu_entity":"","nlu_entity_label":""},{"node_id":"01121432ac14413885850d675b6158b4","variable_name":"requesteduser","nlu_entity":"","nlu_entity_label":""},{"node_id":"0705591b22c84f4eb121d74e2ca809c1","variable_name":"ticket_number","nlu_entity":"","nlu_entity_label":""},{"node_id":"bf79fe9ed0c54ec382989cdbf99e9980","variable_name":"hiring_manager","nlu_entity":"","nlu_entity_label":""},{"node_id":"0a20ba7a27994951bc7ae6e42a2f8be6","variable_name":"group","nlu_entity":"","nlu_entity_label":""},{"node_id":"80a580d012a54645961467315078bb3e","variable_name":"remote","nlu_entity":"","nlu_entity_label":""},{"node_id":"09b50aaca5ff45dc8b01f06dc2d0c23d","variable_name":"office","nlu_entity":"","nlu_entity_label":""},{"node_id":"79f4cb384c9f42adaaae3c1a3ca89539","variable_name":"nonstandard","nlu_entity":"","nlu_entity_label":""},{"node_id":"c37a3ca355a04c278ace645b420f45f0","variable_name":"devicetype","nlu_entity":"","nlu_entity_label":""},{"node_id":"93d416b08245418dafe7dfded96e2261","variable_name":"mobile_device_type","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>New Hire</nlu_intent>
+        <nlu_intent_label>New Hire</nlu_intent_label>
+        <nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model>
+        <nlu_model_label>OC Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cb_topic_language</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-06 17:01:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>7db543a3db778110e6cb93afaa9619f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_language_7db543a3db778110e6cb93afaa9619f2</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-06 17:31:54</sys_updated_on>
+    </sys_cb_topic_language>
+</record_update>

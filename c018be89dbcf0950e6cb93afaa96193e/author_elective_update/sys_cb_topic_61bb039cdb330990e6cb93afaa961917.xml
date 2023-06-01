@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="DELETE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "9be70b6930974fa4b5d2b7408a97fa83": {
+          "id": "9be70b6930974fa4b5d2b7408a97fa83",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "5852c57e88da4795b51aff90ea605702": {
+          "id": "5852c57e88da4795b51aff90ea605702",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "2240916bf71b4cddbc1301f06281f8db": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to create a new knowledge base"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "ac7c7bc388334a438af697a4327c0423",
+          "id": "2240916bf71b4cddbc1301f06281f8db",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "76f43a19632c49b7abf42f2afbdf516d": {
+          "id": "76f43a19632c49b7abf42f2afbdf516d",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "a72b6589cccc489192a7d740d9ce1552": {
+          "id": "a72b6589cccc489192a7d740d9ce1552",
+          "stepType": "Prompt",
+          "name": "Knowledge Base Name",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the name of the knowledge base?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "8c44bc34af5d42238df04685eb16f25c",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "049c9aacbbd44109a51640b17c328cba": {
+          "id": "049c9aacbbd44109a51640b17c328cba",
+          "stepType": "Prompt",
+          "name": "Reason",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the reason for this Knowledge Base to be created?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "98d61f80f50a4ba59da0d1df26adb6ab",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "9150464e2b2d444c92d5c73385c6688c": {
+          "id": "9150464e2b2d444c92d5c73385c6688c",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': '81c887819f203100d8f8700c267fcfb5',\t\n//\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t//'requested_title': vaInputs.knowledge_base_name.getValue(),\n\t\t//'request_reason' : vaInputs.reason.getValue()\n\t}\n};\n//cart.setRequestedFor(vaInputs.requestinguser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "51d6968bfdc4460f85af0bf7cb33a02d": {
+          "id": "51d6968bfdc4460f85af0bf7cb33a02d",
+          "stepType": "SlotFillPrompt",
+          "name": "Ticket Number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "fde6fa9d87bb4b40af1238571a5d71b0",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 13",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1MzY2NDQ0NTA2OSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "1efff949cef048ccb59903467e7f3dd1": {
+          "id": "1efff949cef048ccb59903467e7f3dd1",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Number",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket Number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "02d43e042a3945a3afb3ba051fcc02cd": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "RequestingUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is requesting this setup?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "023f36eb4c9e4f19af809f2d27666a69",
+          "id": "02d43e042a3945a3afb3ba051fcc02cd",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        }
+      },
+      "edges": [
+        {
+          "id": "e50ce10f38434aabba4c1778bf2d2edf",
+          "edgeType": "Edge",
+          "source": "2240916bf71b4cddbc1301f06281f8db",
+          "target": "76f43a19632c49b7abf42f2afbdf516d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "fc484b428d84481fa10f6ae296146aae",
+          "edgeType": "Branch",
+          "source": "76f43a19632c49b7abf42f2afbdf516d",
+          "target": "5852c57e88da4795b51aff90ea605702",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "576c3bf6a80d413bb2151f839542fc47",
+          "edgeType": "Edge",
+          "source": "a72b6589cccc489192a7d740d9ce1552",
+          "target": "049c9aacbbd44109a51640b17c328cba",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "87629ad6259f445790c14998fef7a47e",
+          "edgeType": "Edge",
+          "source": "049c9aacbbd44109a51640b17c328cba",
+          "target": "9150464e2b2d444c92d5c73385c6688c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8c58bdb3378b43f4aa76b60734e94e22",
+          "edgeType": "Edge",
+          "source": "9be70b6930974fa4b5d2b7408a97fa83",
+          "target": "51d6968bfdc4460f85af0bf7cb33a02d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "16589dbf31e04944883d13bdf3dc78bd",
+          "edgeType": "Edge",
+          "source": "51d6968bfdc4460f85af0bf7cb33a02d",
+          "target": "2240916bf71b4cddbc1301f06281f8db",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "48f60a79290a4f5cab32c960cebd91b1",
+          "edgeType": "Edge",
+          "source": "9150464e2b2d444c92d5c73385c6688c",
+          "target": "1efff949cef048ccb59903467e7f3dd1",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ae533f21560e4c43a332dda63c141c5c",
+          "edgeType": "Edge",
+          "source": "1efff949cef048ccb59903467e7f3dd1",
+          "target": "5852c57e88da4795b51aff90ea605702",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d1f38f432f53461f964c4afe8ec43981",
+          "edgeType": "Branch",
+          "source": "76f43a19632c49b7abf42f2afbdf516d",
+          "target": "02d43e042a3945a3afb3ba051fcc02cd",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "184d2552574443d4a2dc9851adcce700",
+          "edgeType": "Edge",
+          "source": "02d43e042a3945a3afb3ba051fcc02cd",
+          "target": "a72b6589cccc489192a7d740d9ce1552",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "ac7c7bc388334a438af697a4327c0423": {
+      "id": "ac7c7bc388334a438af697a4327c0423",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "8c44bc34af5d42238df04685eb16f25c": {
+      "id": "8c44bc34af5d42238df04685eb16f25c",
+      "name": "knowledge_base_name",
+      "label": "Knowledge Base Name",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1MzY2NDI5MzczMSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "98d61f80f50a4ba59da0d1df26adb6ab": {
+      "id": "98d61f80f50a4ba59da0d1df26adb6ab",
+      "name": "reason",
+      "label": "Reason",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1MzY2NDM1NjU0NCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "fde6fa9d87bb4b40af1238571a5d71b0": {
+      "id": "fde6fa9d87bb4b40af1238571a5d71b0",
+      "name": "ticket_number",
+      "label": "Ticket Number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "023f36eb4c9e4f19af809f2d27666a69": {
+      "id": "023f36eb4c9e4f19af809f2d27666a69",
+      "name": "requestinguser",
+      "label": "RequestingUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Request Knowledge Base</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Request Knowledge Base</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-27 15:07:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>61bb039cdb330990e6cb93afaa961917</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Request Knowledge Base</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_61bb039cdb330990e6cb93afaa961917</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-27 15:47:52</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="DELETE" query="document_key=61bb039cdb330990e6cb93afaa961917"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</application>
+        <file_path/>
+        <instance_id>85f207696f9e420056007b2f5d3ee415</instance_id>
+        <instance_name>saicdemo1</instance_name>
+        <name>sys_cb_topic_61bb039cdb330990e6cb93afaa961917</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic"><sys_cb_topic action="INSERT_OR_UPDATE"><applicability/><applicability_mode>query</applicability_mode><auto_resolution_enabled>false</auto_resolution_enabled><autopilot_topic>false</autopilot_topic><category/><channels/><connect_queue/><description/><expose_on_palette>false</expose_on_palette><flexible_conversation_switching>false</flexible_conversation_switching><graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "9be70b6930974fa4b5d2b7408a97fa83": {
+          "id": "9be70b6930974fa4b5d2b7408a97fa83",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "5852c57e88da4795b51aff90ea605702": {
+          "id": "5852c57e88da4795b51aff90ea605702",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "2240916bf71b4cddbc1301f06281f8db": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to create a new knowledge base"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "ac7c7bc388334a438af697a4327c0423",
+          "id": "2240916bf71b4cddbc1301f06281f8db",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "76f43a19632c49b7abf42f2afbdf516d": {
+          "id": "76f43a19632c49b7abf42f2afbdf516d",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "a72b6589cccc489192a7d740d9ce1552": {
+          "id": "a72b6589cccc489192a7d740d9ce1552",
+          "stepType": "Prompt",
+          "name": "Knowledge Base Name",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the name of the knowledge base?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "8c44bc34af5d42238df04685eb16f25c",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "049c9aacbbd44109a51640b17c328cba": {
+          "id": "049c9aacbbd44109a51640b17c328cba",
+          "stepType": "Prompt",
+          "name": "Reason",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the reason for this Knowledge Base to be created?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "98d61f80f50a4ba59da0d1df26adb6ab",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "9150464e2b2d444c92d5c73385c6688c": {
+          "id": "9150464e2b2d444c92d5c73385c6688c",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': '81c887819f203100d8f8700c267fcfb5',\t\n//\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t//'requested_title': vaInputs.knowledge_base_name.getValue(),\n\t\t//'request_reason' : vaInputs.reason.getValue()\n\t}\n};\n//cart.setRequestedFor(vaInputs.requestinguser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "51d6968bfdc4460f85af0bf7cb33a02d": {
+          "id": "51d6968bfdc4460f85af0bf7cb33a02d",
+          "stepType": "SlotFillPrompt",
+          "name": "Ticket Number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "fde6fa9d87bb4b40af1238571a5d71b0",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 13",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1MzY2NDQ0NTA2OSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "1efff949cef048ccb59903467e7f3dd1": {
+          "id": "1efff949cef048ccb59903467e7f3dd1",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Number",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket Number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "02d43e042a3945a3afb3ba051fcc02cd": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "RequestingUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is requesting this setup?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "023f36eb4c9e4f19af809f2d27666a69",
+          "id": "02d43e042a3945a3afb3ba051fcc02cd",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        }
+      },
+      "edges": [
+        {
+          "id": "e50ce10f38434aabba4c1778bf2d2edf",
+          "edgeType": "Edge",
+          "source": "2240916bf71b4cddbc1301f06281f8db",
+          "target": "76f43a19632c49b7abf42f2afbdf516d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "fc484b428d84481fa10f6ae296146aae",
+          "edgeType": "Branch",
+          "source": "76f43a19632c49b7abf42f2afbdf516d",
+          "target": "5852c57e88da4795b51aff90ea605702",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "576c3bf6a80d413bb2151f839542fc47",
+          "edgeType": "Edge",
+          "source": "a72b6589cccc489192a7d740d9ce1552",
+          "target": "049c9aacbbd44109a51640b17c328cba",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "87629ad6259f445790c14998fef7a47e",
+          "edgeType": "Edge",
+          "source": "049c9aacbbd44109a51640b17c328cba",
+          "target": "9150464e2b2d444c92d5c73385c6688c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8c58bdb3378b43f4aa76b60734e94e22",
+          "edgeType": "Edge",
+          "source": "9be70b6930974fa4b5d2b7408a97fa83",
+          "target": "51d6968bfdc4460f85af0bf7cb33a02d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "16589dbf31e04944883d13bdf3dc78bd",
+          "edgeType": "Edge",
+          "source": "51d6968bfdc4460f85af0bf7cb33a02d",
+          "target": "2240916bf71b4cddbc1301f06281f8db",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "48f60a79290a4f5cab32c960cebd91b1",
+          "edgeType": "Edge",
+          "source": "9150464e2b2d444c92d5c73385c6688c",
+          "target": "1efff949cef048ccb59903467e7f3dd1",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ae533f21560e4c43a332dda63c141c5c",
+          "edgeType": "Edge",
+          "source": "1efff949cef048ccb59903467e7f3dd1",
+          "target": "5852c57e88da4795b51aff90ea605702",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d1f38f432f53461f964c4afe8ec43981",
+          "edgeType": "Branch",
+          "source": "76f43a19632c49b7abf42f2afbdf516d",
+          "target": "02d43e042a3945a3afb3ba051fcc02cd",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "184d2552574443d4a2dc9851adcce700",
+          "edgeType": "Edge",
+          "source": "02d43e042a3945a3afb3ba051fcc02cd",
+          "target": "a72b6589cccc489192a7d740d9ce1552",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "ac7c7bc388334a438af697a4327c0423": {
+      "id": "ac7c7bc388334a438af697a4327c0423",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "8c44bc34af5d42238df04685eb16f25c": {
+      "id": "8c44bc34af5d42238df04685eb16f25c",
+      "name": "knowledge_base_name",
+      "label": "Knowledge Base Name",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1MzY2NDI5MzczMSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "98d61f80f50a4ba59da0d1df26adb6ab": {
+      "id": "98d61f80f50a4ba59da0d1df26adb6ab",
+      "name": "reason",
+      "label": "Reason",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1MzY2NDM1NjU0NCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "fde6fa9d87bb4b40af1238571a5d71b0": {
+      "id": "fde6fa9d87bb4b40af1238571a5d71b0",
+      "name": "ticket_number",
+      "label": "Ticket Number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "023f36eb4c9e4f19af809f2d27666a69": {
+      "id": "023f36eb4c9e4f19af809f2d27666a69",
+      "name": "requestinguser",
+      "label": "RequestingUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    }
+  }
+}</graph><key_phrases>Request Knowledge Base</key_phrases><library>false</library><live_agent>false</live_agent><name>Request Knowledge Base</name><nlu_intent/><nlu_intent_label/><nlu_model/><nlu_model_label/><nlu_provider/><palette_label/><roles>public</roles><source_topic_id/><sys_class_name>sys_cb_topic</sys_class_name><sys_created_by>adminjon</sys_created_by><sys_created_on>2022-05-27 15:07:02</sys_created_on><sys_domain>global</sys_domain><sys_id>61bb039cdb330990e6cb93afaa961917</sys_id><sys_mod_count>12</sys_mod_count><sys_name>Request Knowledge Base</sys_name><sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package><sys_policy/><sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope><sys_update_name>sys_cb_topic_61bb039cdb330990e6cb93afaa961917</sys_update_name><sys_updated_by>adminjon</sys_updated_by><sys_updated_on>2022-05-27 15:47:52</sys_updated_on><triggerable_by_notification>false</triggerable_by_notification><type>STANDARD</type><variables/></sys_cb_topic><sys_variable_value action="delete_multiple" query="document_key=61bb039cdb330990e6cb93afaa961917"/></record_update>]]></payload>
+        <payload_hash>-1417695925</payload_hash>
+        <record_name>Request Knowledge Base</record_name>
+        <reverted_from/>
+        <source>c818be89dbcf0950e6cb93afaa961940</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-27 15:47:52</sys_created_on>
+        <sys_id>7b05139cdb730990e6cb93afaa961981</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1810633e26c0000001</sys_recorded_at>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-27 15:47:52</sys_updated_on>
+        <type>Topic</type>
+        <update_guid>7f05139c3f730990c719997c25ceed80</update_guid>
+        <update_guid_history>7f05139c3f730990c719997c25ceed80:-1417695925,eba4575c1c730990fb73563ee773fab1:-1101345685,c0341b1c3073099027e30c10dc1feef9:-1008927957,0b435b987573099028fb30e7e3707a3d:196182402,2d1153d42b730990c1dda29cf6617dbf:-546457951,ad705b545f7309907807093d84010756:-1777380137,afbf4b144c730990b5233723977a4d6e:-880957077,6a2e0f5043730990dc0c73116fc2a40c:917715069,698d8f10097309902e719914402a4666:426030866,1a4d47105e730990fce1780ceadb44de:1495069046,a20d4710b7730990826851e7b6b4ffd6:174009824,b07c03dcbd3309901d3f7acb5d8d5cd2:-440804425,b5bb439c8c330990486f09ea594da367:978020469</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-27 15:53:02</sys_created_on>
+        <sys_db_object display_value="" name="sys_cb_topic">sys_cb_topic</sys_db_object>
+        <sys_id>1f2fe2209f4c4d4785029698d7d9bb71</sys_id>
+        <sys_metadata>61bb039cdb330990e6cb93afaa961917</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Request Knowledge Base</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_scope_delete display_value="">82a1a48d8e644a2684ce3d2556cef1a4</sys_scope_delete>
+        <sys_update_name>sys_cb_topic_61bb039cdb330990e6cb93afaa961917</sys_update_name>
+        <sys_update_version display_value="sys_cb_topic_61bb039cdb330990e6cb93afaa961917">7b05139cdb730990e6cb93afaa961981</sys_update_version>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-27 15:53:02</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

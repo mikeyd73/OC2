@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "3f732d4383dd4a858b9c38437a9ac136": {
+          "id": "3f732d4383dd4a858b9c38437a9ac136",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "37bc0b068b434447b39ca43adb621673": {
+          "id": "37bc0b068b434447b39ca43adb621673",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "9347f0e1afee479081f062b054061617": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to submit a ticket to repair office equipment"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "b5880710a2ef4a449536b2a4cf767ae6",
+          "id": "9347f0e1afee479081f062b054061617",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "0ea63f3af2424ddd9832575df0e4573f": {
+          "id": "0ea63f3af2424ddd9832575df0e4573f",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "88709e827ec547cd9aa198ef567acca7": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "requestedUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is needing the equipment repaired"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "406cf06165e547c8beb8d35ffdf7edb8",
+          "id": "88709e827ec547cd9aa198ef567acca7",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "0eedf4caae8643cda791e697a1591d13": {
+          "id": "0eedf4caae8643cda791e697a1591d13",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "8287ede6e1af4f8ca43bbc2ac49fcdbd",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 60",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDg2OTkwMDM1MCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "18b1552eb41648f7803bc2a4e49a2d0e": {
+          "id": "18b1552eb41648f7803bc2a4e49a2d0e",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': 'd4254493c611227a0135f7f3b66f4bf5',\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'item': vaInputs.item.getValue(),\n\t\t'location': vaInputs.location.getValue(),\n\t\t'additional_details': vaInputs.additional_details.getValue(),\n\t}\n};\ncart.setRequestedFor(vaInputs.requesteduser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "5d8ca382a15343bf879987b4f892e663": {
+          "id": "5d8ca382a15343bf879987b4f892e663",
+          "stepType": "TextOutput",
+          "name": "Display Ticker Number",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID:  "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket_number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "c0505c14b5b74d86b5d448c796d863aa": {
+          "id": "c0505c14b5b74d86b5d448c796d863aa",
+          "stepType": "Prompt",
+          "name": "item",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What item needs to be repaired"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "34a0882fd2864bf58a4c3fea45fb0840",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "f36a300dfc4345268e74aae9cba71922": {
+          "id": "f36a300dfc4345268e74aae9cba71922",
+          "stepType": "Prompt",
+          "name": "additional_details",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Any additional details"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "aa7432d3f39f4cda8cb33552b8aba48e",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "b0623871840d48399e8066fe2b0e33aa": {
+          "id": "b0623871840d48399e8066fe2b0e33aa",
+          "stepType": "Prompt",
+          "name": "location",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the location of the item that needs to be repaired"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "b3b20b55b2394b3980355defdfe20766",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "26093c8e65254b3bb974d2e6fed48756",
+          "edgeType": "Edge",
+          "source": "f36a300dfc4345268e74aae9cba71922",
+          "target": "18b1552eb41648f7803bc2a4e49a2d0e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "4d57e683e67d430399a8ee0c66af2c66",
+          "edgeType": "Edge",
+          "source": "9347f0e1afee479081f062b054061617",
+          "target": "0ea63f3af2424ddd9832575df0e4573f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c38274d96f00493e83d51e0d801fb7ce",
+          "edgeType": "Branch",
+          "source": "0ea63f3af2424ddd9832575df0e4573f",
+          "target": "37bc0b068b434447b39ca43adb621673",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "a9b48099ae67414cb57b119356f1f04d",
+          "edgeType": "Branch",
+          "source": "0ea63f3af2424ddd9832575df0e4573f",
+          "target": "88709e827ec547cd9aa198ef567acca7",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "a50c9aaeb3a14a65a6b12cfa0e142c82",
+          "edgeType": "Edge",
+          "source": "3f732d4383dd4a858b9c38437a9ac136",
+          "target": "0eedf4caae8643cda791e697a1591d13",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f9db2ac2eda4483a96ed5992260dcaa0",
+          "edgeType": "Edge",
+          "source": "0eedf4caae8643cda791e697a1591d13",
+          "target": "9347f0e1afee479081f062b054061617",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d8e85d19d1e748e6929602cb4bbb1475",
+          "edgeType": "Edge",
+          "source": "18b1552eb41648f7803bc2a4e49a2d0e",
+          "target": "5d8ca382a15343bf879987b4f892e663",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cb23c9a41118467f82d5f2cb9f49b388",
+          "edgeType": "Edge",
+          "source": "5d8ca382a15343bf879987b4f892e663",
+          "target": "37bc0b068b434447b39ca43adb621673",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cd695e7a3947419cb6f0a256a4da8928",
+          "edgeType": "Edge",
+          "source": "88709e827ec547cd9aa198ef567acca7",
+          "target": "c0505c14b5b74d86b5d448c796d863aa",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "637c134f2a6b45e3af3a992d337ca017",
+          "edgeType": "Edge",
+          "source": "c0505c14b5b74d86b5d448c796d863aa",
+          "target": "b0623871840d48399e8066fe2b0e33aa",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "35b15af279284a7baf3dc61ccbbbdd9a",
+          "edgeType": "Edge",
+          "source": "b0623871840d48399e8066fe2b0e33aa",
+          "target": "f36a300dfc4345268e74aae9cba71922",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "b5880710a2ef4a449536b2a4cf767ae6": {
+      "id": "b5880710a2ef4a449536b2a4cf767ae6",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "406cf06165e547c8beb8d35ffdf7edb8": {
+      "id": "406cf06165e547c8beb8d35ffdf7edb8",
+      "name": "requesteduser",
+      "label": "RequestedUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "8287ede6e1af4f8ca43bbc2ac49fcdbd": {
+      "id": "8287ede6e1af4f8ca43bbc2ac49fcdbd",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "34a0882fd2864bf58a4c3fea45fb0840": {
+      "id": "34a0882fd2864bf58a4c3fea45fb0840",
+      "name": "item",
+      "label": "Item",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NDg3Mjk2MDQxMCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "b3b20b55b2394b3980355defdfe20766": {
+      "id": "b3b20b55b2394b3980355defdfe20766",
+      "name": "location",
+      "label": "Location",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NDg3Mjk5NTI3NSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "aa7432d3f39f4cda8cb33552b8aba48e": {
+      "id": "aa7432d3f39f4cda8cb33552b8aba48e",
+      "name": "additional_details",
+      "label": "Additional_details",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NDg3MzAxMzI1NSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    }
+  }
+}</graph>
+        <key_phrases>Repair office equipment</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Repair office equipment</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-10 14:02:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>41334b30db049910e6cb93afaa96197b</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Repair office equipment</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_41334b30db049910e6cb93afaa96197b</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-10 15:09:44</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=41334b30db049910e6cb93afaa96197b"/>
+</record_update>

@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "927d67a7553e47e7be6eac8dd8410e73": {
+          "id": "927d67a7553e47e7be6eac8dd8410e73",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "d75601c8b757436e926b6aa1b3c6527a": {
+          "id": "d75601c8b757436e926b6aa1b3c6527a",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "09e7645abf5b42249ddb2e6febc0d4fd": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to Whitelist an IP address"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "5f3547cc3c8b4da9baa3f1f498b91fa9",
+          "id": "09e7645abf5b42249ddb2e6febc0d4fd",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "cd4820e704bd4d2e99db1215d627e676": {
+          "id": "cd4820e704bd4d2e99db1215d627e676",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "e50d250e18164aec926102925d3c9149": {
+          "id": "e50d250e18164aec926102925d3c9149",
+          "stepType": "Prompt",
+          "name": "ip_range",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What IP address, or IP range to whitelist?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "8e3e77b1912b4be28cbc2d6769578994",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "7ee2b17cc7f3407db04d8092b0a43202": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "primary contact",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is the primary contact?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "42630ea5f76047d1bdefb83aaef54d18",
+          "id": "7ee2b17cc7f3407db04d8092b0a43202",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "d3006d74d1d74b2f9439aa7aea262ea5": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "cost_center",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What cost center will be billed?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "dc0a18262e714424b735d59a5c7deff7",
+          "id": "d3006d74d1d74b2f9439aa7aea262ea5",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No cost centers found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_idANYTHING"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "80d30a2913b440b18224b9c32de7e6af": {
+          "stepType": "ChoicePrompt",
+          "name": "business_purpose",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the business purpose?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "f305fb245ace4479be97d8e462405a1a",
+          "id": "80d30a2913b440b18224b9c32de7e6af",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "08d60729c3f44c69b44f681e745e3a63": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "requestedUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is requesting to Whitelist and IP range?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "5e59fbd6fc7043e69375445b4d474923",
+          "id": "08d60729c3f44c69b44f681e745e3a63",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "0a9f9e65e523431786c18e200fc2fe0a": {
+          "id": "0a9f9e65e523431786c18e200fc2fe0a",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': 'e91336da4fff0200086eeed18110c7a3',\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'cost_center': vaInputs.cost_center.getValue(),\n        'ip_range': vaInputs.ip_range.getValue(),\n        'business_purpose': vaInputs.business_purpose.getValue(),\n\t\t'primary_contact': vaInputs.primary_contact.getValue(),\n\t}\n};\ncart.setRequestedFor(vaInputs.requesteduser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "fba28cc2435946a0b1b4f8d8d5834efd": {
+          "id": "fba28cc2435946a0b1b4f8d8d5834efd",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Item",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket_number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "e3171a01ec9f4623b760f61e62076f1b": {
+          "id": "e3171a01ec9f4623b760f61e62076f1b",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "208da0ea2f4f4a9f846ba7cf0a2b5b48",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 33",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDg4MjcxNTgzNCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        }
+      },
+      "edges": [
+        {
+          "id": "8caac559fc0742b0b3066133df95a24c",
+          "edgeType": "Edge",
+          "source": "09e7645abf5b42249ddb2e6febc0d4fd",
+          "target": "cd4820e704bd4d2e99db1215d627e676",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "98ec875814d448f19106ca3e4b188973",
+          "edgeType": "Branch",
+          "source": "cd4820e704bd4d2e99db1215d627e676",
+          "target": "d75601c8b757436e926b6aa1b3c6527a",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "f53275eb50ff4124be665a9720c25f34",
+          "edgeType": "Edge",
+          "source": "d3006d74d1d74b2f9439aa7aea262ea5",
+          "target": "7ee2b17cc7f3407db04d8092b0a43202",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d867d68b829f45caab9657c3ef33ba27",
+          "edgeType": "Edge",
+          "source": "e50d250e18164aec926102925d3c9149",
+          "target": "80d30a2913b440b18224b9c32de7e6af",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7eb05b7a864544f1824702e56f136efd",
+          "edgeType": "Edge",
+          "source": "80d30a2913b440b18224b9c32de7e6af",
+          "target": "d3006d74d1d74b2f9439aa7aea262ea5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "21801166aab549c18f4d2fd978cdc3a1",
+          "edgeType": "Branch",
+          "source": "cd4820e704bd4d2e99db1215d627e676",
+          "target": "08d60729c3f44c69b44f681e745e3a63",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "63c3e51ba6f2493e84bd790ed4211368",
+          "edgeType": "Edge",
+          "source": "08d60729c3f44c69b44f681e745e3a63",
+          "target": "e50d250e18164aec926102925d3c9149",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ddf8549af4e34245bb3a7ac9414574e6",
+          "edgeType": "Edge",
+          "source": "7ee2b17cc7f3407db04d8092b0a43202",
+          "target": "0a9f9e65e523431786c18e200fc2fe0a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "3278d2bccedc4b5a886a2ae979326a38",
+          "edgeType": "Edge",
+          "source": "0a9f9e65e523431786c18e200fc2fe0a",
+          "target": "fba28cc2435946a0b1b4f8d8d5834efd",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "752b18bd8309496989889cd39d1e5b62",
+          "edgeType": "Edge",
+          "source": "fba28cc2435946a0b1b4f8d8d5834efd",
+          "target": "d75601c8b757436e926b6aa1b3c6527a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cfd809cd5af045cf96d530eb9c7763bb",
+          "edgeType": "Edge",
+          "source": "927d67a7553e47e7be6eac8dd8410e73",
+          "target": "e3171a01ec9f4623b760f61e62076f1b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8f4e50a1959b47e1acca2a40ea6caa32",
+          "edgeType": "Edge",
+          "source": "e3171a01ec9f4623b760f61e62076f1b",
+          "target": "09e7645abf5b42249ddb2e6febc0d4fd",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "5f3547cc3c8b4da9baa3f1f498b91fa9": {
+      "id": "5f3547cc3c8b4da9baa3f1f498b91fa9",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "8e3e77b1912b4be28cbc2d6769578994": {
+      "id": "8e3e77b1912b4be28cbc2d6769578994",
+      "name": "ip_range",
+      "label": "Ip_range",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NDg4MTUzODg1MyBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "42630ea5f76047d1bdefb83aaef54d18": {
+      "id": "42630ea5f76047d1bdefb83aaef54d18",
+      "name": "primary_contact",
+      "label": "Primary Contact",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "dc0a18262e714424b735d59a5c7deff7": {
+      "id": "dc0a18262e714424b735d59a5c7deff7",
+      "name": "cost_center",
+      "label": "Cost_center",
+      "varType": "reference",
+      "table": "cmn_department",
+      "category": "vaInputs"
+    },
+    "f305fb245ace4479be97d8e462405a1a": {
+      "id": "f305fb245ace4479be97d8e462405a1a",
+      "name": "business_purpose",
+      "label": "Business_purpose",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "KTLO",
+          "value": "ktlo"
+        },
+        {
+          "label": "Special Projects",
+          "value": "special_projects",
+          "checked": true
+        },
+        {
+          "label": "Testing",
+          "value": "testing",
+          "checked": true
+        },
+        {
+          "label": "Other",
+          "value": "other",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "5e59fbd6fc7043e69375445b4d474923": {
+      "id": "5e59fbd6fc7043e69375445b4d474923",
+      "name": "requesteduser",
+      "label": "RequestedUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "208da0ea2f4f4a9f846ba7cf0a2b5b48": {
+      "id": "208da0ea2f4f4a9f846ba7cf0a2b5b48",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Whitelist IP</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Whitelist IP</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-10 17:16:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>49bf6b78db089910e6cb93afaa961930</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Whitelist IP</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_49bf6b78db089910e6cb93afaa961930</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-10 17:44:39</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=49bf6b78db089910e6cb93afaa961930"/>
+</record_update>

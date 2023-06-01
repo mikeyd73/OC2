@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic_language">
+    <sys_cb_topic_language action="INSERT_OR_UPDATE">
+        <cb_topic_id display_value="Install Software">892893e2dbbf45d0e6cb93afaa9619bb</cb_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"node_id":"1d2e05f494024a86a52ab5d385497c94","variable_name":"title","nlu_entity":"","nlu_entity_label":""},{"node_id":"89cdecc4f95d4d72b7523c04c50d640f","variable_name":"software","nlu_entity":"","nlu_entity_label":""},{"node_id":"1a4ec78dbc8f4ce89decd281483a9f4c","variable_name":"mediadisks","nlu_entity":"","nlu_entity_label":""},{"node_id":"16d16f48e4b54a4e8f768f2dc42e2744","variable_name":"ticket_number","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>Install Software</nlu_intent>
+        <nlu_intent_label>Install Software</nlu_intent_label>
+        <nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model>
+        <nlu_model_label>OC Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cb_topic_language</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-03 15:47:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>152897e2dbbf45d0e6cb93afaa961957</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_language_152897e2dbbf45d0e6cb93afaa961957</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-03 16:03:06</sys_updated_on>
+    </sys_cb_topic_language>
+</record_update>

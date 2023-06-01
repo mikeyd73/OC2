@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ml_capability_definition_base">
+    <ml_capability_definition_base action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <capability display_value="NLU">b4ddf73453c73300d1dcddeeff7b1288</capability>
+        <current_solution_version>15</current_solution_version>
+        <dataset_language>en</dataset_language>
+        <fields/>
+        <filter/>
+        <request_source>api</request_source>
+        <solution_label>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</solution_label>
+        <solution_name>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</solution_name>
+        <solution_parameters/>
+        <solution_properties>{"authoringModel":{"intents":[{"name":"Assign Office Space","samples":[{"utterance":"Change Office Space"},{"utterance":"Need a cubicle"},{"utterance":"New Office"},{"utterance":"New Office Space"},{"utterance":"Office Space"}],"entities":[]},{"name":"Desk Set Up","samples":[{"utterance":"Computer set up"},{"utterance":"Desk set up"},{"utterance":"Get Desk ready"},{"utterance":"set up cubicle"},{"utterance":"set up workstation"}],"entities":[]},{"name":"Install Software","samples":[{"utterance":"download software"},{"utterance":"install"},{"utterance":"install adobe"},{"utterance":"install java"},{"utterance":"install program"},{"utterance":"install snagit"},{"utterance":"Need software installed"}],"entities":[]},{"name":"New Email Account","samples":[{"utterance":"email creation"},{"utterance":"email set up"},{"utterance":"I need a new email account set up"},{"utterance":"i need email"},{"utterance":"new email"}],"entities":[]},{"name":"New Hire","samples":[{"utterance":"new employee"},{"utterance":"New hire"},{"utterance":"new set up"},{"utterance":"new worker"},{"utterance":"set up"}],"entities":[]},{"name":"Packaging and shipping","samples":[{"utterance":"Mailing a package"},{"utterance":"packaging equipment"},{"utterance":"sending a computer"},{"utterance":"sending a printer"},{"utterance":"sending equipment"}],"entities":[]},{"name":"Paper and Supplies","samples":[{"utterance":"I need office supplies"},{"utterance":"i want chalk"},{"utterance":"I want erasers"},{"utterance":"need paper"},{"utterance":"need paperclips"},{"utterance":"need pencils"},{"utterance":"need pens"},{"utterance":"need supplies"},{"utterance":"order Paper"},{"utterance":"order Paperclips"},{"utterance":"order Pencils"},{"utterance":"order Pens"},{"utterance":"order Supplies"}],"entities":[]},{"name":"Provision a Database","samples":[{"utterance":"Build a database"},{"utterance":"building a evidence base"},{"utterance":"Constitute a database"},{"utterance":"development of a database"},{"utterance":"Provision a database"}],"entities":[]},{"name":"Reboot Windows Server","samples":[{"utterance":"bounce server"},{"utterance":"Reboot windows server"},{"utterance":"refresh windows server"},{"utterance":"restart server"},{"utterance":"restart windows server"}],"entities":[]},{"name":"Remove End User Account","samples":[{"utterance":"Get rid of account"},{"utterance":"Remove Account"},{"utterance":"Remove End User Account"},{"utterance":"Remove User"},{"utterance":"Remove User Account"}],"entities":[]},{"name":"Repair Office Equipment","samples":[{"utterance":"fix desk"},{"utterance":"fix printer"},{"utterance":"repair desk"},{"utterance":"repair office equipment"},{"utterance":"repair printer"}],"entities":[]},{"name":"Request for backup","samples":[{"utterance":"backup of computer"},{"utterance":"backup of media"},{"utterance":"backup of server"},{"utterance":"create backup"},{"utterance":"make backup"},{"utterance":"Request for backup"}],"entities":[]},{"name":"Request Knowledge Base","samples":[{"utterance":"confluence"},{"utterance":"knowledge"},{"utterance":"knowledge base"},{"utterance":"Request Knowledge Base"},{"utterance":"wikipedia"}],"entities":[]},{"name":"Server Tuning","samples":[{"utterance":"Server Performance"},{"utterance":"Server Tuning"},{"utterance":"Slow Server"},{"utterance":"Speed up Server"},{"utterance":"Tune Server"}],"entities":[]},{"name":"Test","samples":[{"utterance":"test"},{"utterance":"test1"},{"utterance":"test2"},{"utterance":"test3"},{"utterance":"test4"}],"entities":[]},{"name":"Whitelist IP","samples":[{"utterance":"allow address"},{"utterance":"Allow IP address"},{"utterance":"allow user"},{"utterance":"IP address"},{"utterance":"Whitelist IP address"}],"entities":[]}],"schemaVersion":"NY-1","vocabulary":[],"modelPurpose":"virtual_agent","entities":[],"confidenceThreshold":"0.6","lookupSources":[],"name":"ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924","language":"en","version":"rome.0"},"label":"ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924","name":"ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924","nluTrainingMode":"IntentClassifier","g_bn":"Rome","g_jv":"20.9b.0.2","g_bt":"glide-rome-06-23-2021__patch9b-07-19-2022","trainingMode":"sync"}</solution_properties>
+        <stopwords>a6282a25533333008c5bddeeff7b12c3</stopwords>
+        <sys_class_name>ml_capability_definition_base</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-04-27 19:56:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>213ee136dbcf0110e6cb93afaa961926</sys_id>
+        <sys_mod_count>87</sys_mod_count>
+        <sys_name>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>ml_capability_definition_base_213ee136dbcf0110e6cb93afaa961926</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-08 04:02:51</sys_updated_on>
+        <table/>
+        <training_frequency>run_once</training_frequency>
+        <word_vector_corpus/>
+    </ml_capability_definition_base>
+</record_update>

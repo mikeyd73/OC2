@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "fec69d3ac48147e2826b82b370b9bb5a": {
+          "id": "fec69d3ac48147e2826b82b370b9bb5a",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "4713175c7cc24a17a899988b690ec0d3": {
+          "id": "4713175c7cc24a17a899988b690ec0d3",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "c8a26f8d5db847bdb6315d19cc7b17c9": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to set up a new hire"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "395ffb928ffe465cb7ae2916c411a755",
+          "id": "c8a26f8d5db847bdb6315d19cc7b17c9",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "ad3a527bcb9e48d4a224e62af5691d68": {
+          "id": "ad3a527bcb9e48d4a224e62af5691d68",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "4d2b4525e3bc4d8d974614aa98c65373": {
+          "id": "4d2b4525e3bc4d8d974614aa98c65373",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': '6690750f4f7b4200086eeed18110c761',\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'hiring_manager': vaInputs.hiring_manager.getValue(),\n\t\t'hiring_group': vaInputs.group.getValue(),\n\t\t'remote': vaInputs.remote.getValue(),\n\t\t'corp_office': vaInputs.office.getValue(),\n\t\t'standard_package': vaInputs.nonstandard.getValue(),\n\t\t'laptop_style': vaInputs.devicetype.getValue(),\n\t\t'mobile_device_type' : vaInputs.mobile_device_type.getValue(),\n\t}\n};\ncart.setRequestedFor(vaInputs.requesteduser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "01121432ac14413885850d675b6158b4": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "requestedUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is the user that is needed New Hire Setup?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "76e65bdb1c224a3ca1577c90c70ef31d",
+          "id": "01121432ac14413885850d675b6158b4",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No Users Found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_idANYTHING"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "0705591b22c84f4eb121d74e2ca809c1": {
+          "id": "0705591b22c84f4eb121d74e2ca809c1",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "a0aa0fca50854f2bb2f0611152d1e339",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 83",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDUzNTYxMDQwMSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "c3930afc71524c168f54f3343537e914": {
+          "id": "c3930afc71524c168f54f3343537e914",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Number",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket_number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "bf79fe9ed0c54ec382989cdbf99e9980": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "Hiring Manager",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is the hiring manager"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "100764dfce7e4ddf926e3b203e8382d8",
+          "id": "bf79fe9ed0c54ec382989cdbf99e9980",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No records found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "0a20ba7a27994951bc7ae6e42a2f8be6": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "group",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What group is this person joining?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "bb352f0b78dd4658b9fced3dcc28bd59",
+          "id": "0a20ba7a27994951bc7ae6e42a2f8be6",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No records found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_idANYTHING"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "80a580d012a54645961467315078bb3e": {
+          "stepType": "ChoicePrompt",
+          "name": "remote",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Will this be a remote employee"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "ca8f3fbb97e242faa6c7e983d2877c7f",
+          "id": "80a580d012a54645961467315078bb3e",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "09b50aaca5ff45dc8b01f06dc2d0c23d": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "office",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What office will the new hire report to?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "92f8982477154d42b3f5f08f63a6bfca",
+          "id": "09b50aaca5ff45dc8b01f06dc2d0c23d",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No records found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_idANYTHING"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "79f4cb384c9f42adaaae3c1a3ca89539": {
+          "stepType": "ChoicePrompt",
+          "name": "nonStandard",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Will the new hire need anything non-standard"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "5538910deff3447b94d82a476f258d54",
+          "id": "79f4cb384c9f42adaaae3c1a3ca89539",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "c37a3ca355a04c278ace645b420f45f0": {
+          "stepType": "ChoicePrompt",
+          "name": "deviceType",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What device type?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "a525537536be4e3d90b0cad6607a0810",
+          "id": "c37a3ca355a04c278ace645b420f45f0",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "93d416b08245418dafe7dfded96e2261": {
+          "stepType": "ChoicePrompt",
+          "name": "Mobile Device Type",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Mobile Device Type"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "f2ac3586db7f4be0b9e7bb4fa5654ae6",
+          "id": "93d416b08245418dafe7dfded96e2261",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        }
+      },
+      "edges": [
+        {
+          "id": "991f3b0998de4a2b879bdc9f2d8ec385",
+          "edgeType": "Edge",
+          "source": "4d2b4525e3bc4d8d974614aa98c65373",
+          "target": "c3930afc71524c168f54f3343537e914",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2445db7e591641d3a801d67a66d6b713",
+          "edgeType": "Edge",
+          "source": "c8a26f8d5db847bdb6315d19cc7b17c9",
+          "target": "ad3a527bcb9e48d4a224e62af5691d68",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e9df1f91453b4cf7986cad25c7727959",
+          "edgeType": "Branch",
+          "source": "ad3a527bcb9e48d4a224e62af5691d68",
+          "target": "4713175c7cc24a17a899988b690ec0d3",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "5b4a1f2fbe6142e7a8634bc7b63ab4ab",
+          "edgeType": "Branch",
+          "source": "ad3a527bcb9e48d4a224e62af5691d68",
+          "target": "01121432ac14413885850d675b6158b4",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "e45ad2d6de77436c8815b10fbbe454fc",
+          "edgeType": "Edge",
+          "source": "fec69d3ac48147e2826b82b370b9bb5a",
+          "target": "0705591b22c84f4eb121d74e2ca809c1",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "4f4bb7ace72a4e8382611395e2db73b5",
+          "edgeType": "Edge",
+          "source": "0705591b22c84f4eb121d74e2ca809c1",
+          "target": "c8a26f8d5db847bdb6315d19cc7b17c9",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "821f6817e2c143498286db17f2b3bd05",
+          "edgeType": "Edge",
+          "source": "c3930afc71524c168f54f3343537e914",
+          "target": "4713175c7cc24a17a899988b690ec0d3",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "acf6eae90992481197844f7042d3bd6a",
+          "edgeType": "Edge",
+          "source": "01121432ac14413885850d675b6158b4",
+          "target": "bf79fe9ed0c54ec382989cdbf99e9980",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "420a93b9192a4bf1a9e64932c1ea8a8f",
+          "edgeType": "Edge",
+          "source": "bf79fe9ed0c54ec382989cdbf99e9980",
+          "target": "0a20ba7a27994951bc7ae6e42a2f8be6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0c82853e81a94e18b2766ef7caaea701",
+          "edgeType": "Edge",
+          "source": "0a20ba7a27994951bc7ae6e42a2f8be6",
+          "target": "80a580d012a54645961467315078bb3e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "943411bb7be34c6fb89a0ebded430d48",
+          "edgeType": "Edge",
+          "source": "80a580d012a54645961467315078bb3e",
+          "target": "09b50aaca5ff45dc8b01f06dc2d0c23d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "4718227345a34aef9275dcab84046ffb",
+          "edgeType": "Edge",
+          "source": "09b50aaca5ff45dc8b01f06dc2d0c23d",
+          "target": "79f4cb384c9f42adaaae3c1a3ca89539",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0d94cafcd4384de29238156022113d8f",
+          "edgeType": "Edge",
+          "source": "79f4cb384c9f42adaaae3c1a3ca89539",
+          "target": "c37a3ca355a04c278ace645b420f45f0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "82551ab7534e45249869f115c49a0990",
+          "edgeType": "Edge",
+          "source": "c37a3ca355a04c278ace645b420f45f0",
+          "target": "93d416b08245418dafe7dfded96e2261",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5aee2268d27f4b36b1a4b02aaa19feee",
+          "edgeType": "Edge",
+          "source": "93d416b08245418dafe7dfded96e2261",
+          "target": "4d2b4525e3bc4d8d974614aa98c65373",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "395ffb928ffe465cb7ae2916c411a755": {
+      "id": "395ffb928ffe465cb7ae2916c411a755",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "76e65bdb1c224a3ca1577c90c70ef31d": {
+      "id": "76e65bdb1c224a3ca1577c90c70ef31d",
+      "name": "requesteduser",
+      "label": "RequestedUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "a0aa0fca50854f2bb2f0611152d1e339": {
+      "id": "a0aa0fca50854f2bb2f0611152d1e339",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "100764dfce7e4ddf926e3b203e8382d8": {
+      "id": "100764dfce7e4ddf926e3b203e8382d8",
+      "name": "hiring_manager",
+      "label": "Hiring Manager",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "bb352f0b78dd4658b9fced3dcc28bd59": {
+      "id": "bb352f0b78dd4658b9fced3dcc28bd59",
+      "name": "group",
+      "label": "Group",
+      "varType": "reference",
+      "table": "cmn_department",
+      "category": "vaInputs"
+    },
+    "ca8f3fbb97e242faa6c7e983d2877c7f": {
+      "id": "ca8f3fbb97e242faa6c7e983d2877c7f",
+      "name": "remote",
+      "label": "Remote",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "92f8982477154d42b3f5f08f63a6bfca": {
+      "id": "92f8982477154d42b3f5f08f63a6bfca",
+      "name": "office",
+      "label": "Office",
+      "varType": "reference",
+      "table": "cmn_location",
+      "category": "vaInputs"
+    },
+    "5538910deff3447b94d82a476f258d54": {
+      "id": "5538910deff3447b94d82a476f258d54",
+      "name": "nonstandard",
+      "label": "NonStandard",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "a525537536be4e3d90b0cad6607a0810": {
+      "id": "a525537536be4e3d90b0cad6607a0810",
+      "name": "devicetype",
+      "label": "DeviceType",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Developer",
+          "value": "developer"
+        },
+        {
+          "label": "Sales",
+          "value": "sales",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "f2ac3586db7f4be0b9e7bb4fa5654ae6": {
+      "id": "f2ac3586db7f4be0b9e7bb4fa5654ae6",
+      "name": "mobile_device_type",
+      "label": "Mobile Device Type",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "iPhone",
+          "value": "iphone"
+        },
+        {
+          "label": "Android",
+          "value": "android",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>New Hire</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>New Hire</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-06 17:01:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>e9b5cf63db778110e6cb93afaa96197c</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>New Hire</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_e9b5cf63db778110e6cb93afaa96197c</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-06 18:33:34</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=e9b5cf63db778110e6cb93afaa96197c"/>
+</record_update>

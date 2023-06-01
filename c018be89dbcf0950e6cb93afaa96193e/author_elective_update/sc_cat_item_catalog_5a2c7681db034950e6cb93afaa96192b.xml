@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="DELETE">
+        <sc_cat_item display_value="Remove End-User Account">162c7681db034950e6cb93afaa961925</sc_cat_item>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-04-22 15:07:26</sys_created_on>
+        <sys_id>5a2c7681db034950e6cb93afaa96192b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.Remove End-User Account</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_5a2c7681db034950e6cb93afaa96192b</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-04-22 15:07:26</sys_updated_on>
+    </sc_cat_item_catalog>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</application>
+        <file_path/>
+        <instance_id>85f207696f9e420056007b2f5d3ee415</instance_id>
+        <instance_name>saicdemo1</instance_name>
+        <name>sc_cat_item_catalog_5a2c7681db034950e6cb93afaa96192b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog"><sc_cat_item_catalog action="INSERT_OR_UPDATE"><sc_cat_item display_value="Remove End-User Account">162c7681db034950e6cb93afaa961925</sc_cat_item><sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog><sys_class_name>sc_cat_item_catalog</sys_class_name><sys_created_by>adminjon</sys_created_by><sys_created_on>2022-04-22 15:07:26</sys_created_on><sys_id>5a2c7681db034950e6cb93afaa96192b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Service Catalog.Remove End-User Account</sys_name><sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package><sys_policy/><sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope><sys_update_name>sc_cat_item_catalog_5a2c7681db034950e6cb93afaa96192b</sys_update_name><sys_updated_by>adminjon</sys_updated_by><sys_updated_on>2022-04-22 15:07:26</sys_updated_on></sc_cat_item_catalog></record_update>]]></payload>
+        <payload_hash>-2054522106</payload_hash>
+        <record_name>Service Catalog.Remove End-User Account</record_name>
+        <reverted_from/>
+        <source>c818be89dbcf0950e6cb93afaa961940</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-04-22 15:07:26</sys_created_on>
+        <sys_id>d22c7681db034950e6cb93afaa96192e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18051d048f00000001</sys_recorded_at>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-04-22 15:07:26</sys_updated_on>
+        <type>Catalog Items Catalog</type>
+        <update_guid>1a2c7681ac03495091b22d34f3191e2d</update_guid>
+        <update_guid_history>1a2c7681ac03495091b22d34f3191e2d:-2054522106</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Service Catalog.Remove End-User Account">de59dfd3dbcb0510e6cb93afaa9619f6</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-04-29 17:01:18</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_catalog">sc_cat_item_catalog</sys_db_object>
+        <sys_id>2c5f69f0148d454c989bc71fac0a6f29</sys_id>
+        <sys_metadata>5a2c7681db034950e6cb93afaa96192b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.Remove End-User Account</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_scope_delete display_value="">82a1a48d8e644a2684ce3d2556cef1a4</sys_scope_delete>
+        <sys_update_name>sc_cat_item_catalog_5a2c7681db034950e6cb93afaa96192b</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_catalog_5a2c7681db034950e6cb93afaa96192b">d22c7681db034950e6cb93afaa96192e</sys_update_version>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-04-29 17:01:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

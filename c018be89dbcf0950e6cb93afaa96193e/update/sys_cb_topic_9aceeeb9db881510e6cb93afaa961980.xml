@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "7696ce740ba640b0b397bc8e896023f0": {
+          "id": "7696ce740ba640b0b397bc8e896023f0",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "917cec6ea83346faa4658e4b73a7c9ea": {
+          "id": "917cec6ea83346faa4658e4b73a7c9ea",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "3a9a773358b74566bfd7c9a09788637b": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to reboot a windows server?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "c52441db58f24bee881b11a8a70dbe01",
+          "id": "3a9a773358b74566bfd7c9a09788637b",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "27894463cb5e48de8cfb193c7ec0bba2": {
+          "id": "27894463cb5e48de8cfb193c7ec0bba2",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "c152ba27e499480b9c49089e03c960ff": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "requestedUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is requested this user?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "70cee79b11fe47dfa7b3b2757e08928d",
+          "id": "c152ba27e499480b9c49089e03c960ff",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "0c588900536b4fa38ad6f2a0ba572b1c": {
+          "id": "0c588900536b4fa38ad6f2a0ba572b1c",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': '563504cc47410200e90d87e8dee490e2',\n\t'sysparm_quantity': '1',\n\t'variables': {\n//\t\t'teardown': vaInputs.teardown.getValue(),\n\t}\n};\ncart.setRequestedFor(vaInputs.requesteduser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "f67ea37f41394590a4f48278303e1e05": {
+          "id": "f67ea37f41394590a4f48278303e1e05",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "fcf8244d6a58423bb009c2c0f9536a83",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 1",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NTEzNjk1MDI3NSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "bbf36073558e4a47ab937c8e2bd16b52": {
+          "id": "bbf36073558e4a47ab937c8e2bd16b52",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Number",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket_number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "d5af46e0027c48399fcb2f5801547bfc",
+          "edgeType": "Edge",
+          "source": "3a9a773358b74566bfd7c9a09788637b",
+          "target": "27894463cb5e48de8cfb193c7ec0bba2",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "83143e6fa7eb4ffd9b25e7e70011e649",
+          "edgeType": "Branch",
+          "source": "27894463cb5e48de8cfb193c7ec0bba2",
+          "target": "917cec6ea83346faa4658e4b73a7c9ea",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "3fa3ea8e73a74cc0a1c1e39cd6b54188",
+          "edgeType": "Branch",
+          "source": "27894463cb5e48de8cfb193c7ec0bba2",
+          "target": "c152ba27e499480b9c49089e03c960ff",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "0137b181c87e425d9d6969fcb545a8c2",
+          "edgeType": "Edge",
+          "source": "c152ba27e499480b9c49089e03c960ff",
+          "target": "0c588900536b4fa38ad6f2a0ba572b1c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "48f0593164174bc2b35b029122f58afd",
+          "edgeType": "Edge",
+          "source": "7696ce740ba640b0b397bc8e896023f0",
+          "target": "f67ea37f41394590a4f48278303e1e05",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e633f8ed5fa94ffcbfeae944aa123a54",
+          "edgeType": "Edge",
+          "source": "f67ea37f41394590a4f48278303e1e05",
+          "target": "3a9a773358b74566bfd7c9a09788637b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "70f6316cbcbc4a809db6ea8c49fb5afc",
+          "edgeType": "Edge",
+          "source": "0c588900536b4fa38ad6f2a0ba572b1c",
+          "target": "bbf36073558e4a47ab937c8e2bd16b52",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d6f906c4f2db4fc092aabaa0e3bfcd9c",
+          "edgeType": "Edge",
+          "source": "bbf36073558e4a47ab937c8e2bd16b52",
+          "target": "917cec6ea83346faa4658e4b73a7c9ea",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "c52441db58f24bee881b11a8a70dbe01": {
+      "id": "c52441db58f24bee881b11a8a70dbe01",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "70cee79b11fe47dfa7b3b2757e08928d": {
+      "id": "70cee79b11fe47dfa7b3b2757e08928d",
+      "name": "requesteduser",
+      "label": "RequestedUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "fcf8244d6a58423bb009c2c0f9536a83": {
+      "id": "fcf8244d6a58423bb009c2c0f9536a83",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Reboot Windows Server</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Reboot Windows Server</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-13 15:07:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>9aceeeb9db881510e6cb93afaa961980</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Reboot Windows Server</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_9aceeeb9db881510e6cb93afaa961980</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-13 16:22:48</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=9aceeeb9db881510e6cb93afaa961980"/>
+</record_update>

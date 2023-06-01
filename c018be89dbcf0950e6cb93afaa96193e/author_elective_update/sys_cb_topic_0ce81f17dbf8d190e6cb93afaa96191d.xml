@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="DELETE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{"graph_api_version":"1.0.36","variables":{},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"6dec5296785242b8aa08470f08ef81d0":{"id":"6dec5296785242b8aa08470f08ef81d0","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"fc5488cae6be4d9cb14c19438aeb111b":{"id":"fc5488cae6be4d9cb14c19438aeb111b","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}}},"edges":[{"id":"6c1f924128ba494aa1040166f69310e5","edgeType":"Edge","source":"6dec5296785242b8aa08470f08ef81d0","target":"fc5488cae6be4d9cb14c19438aeb111b","sourcePort":"","targetPort":""}]}}}</graph>
+        <key_phrases>knowledge article</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>knowledge article</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-07-25 16:49:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>0ce81f17dbf8d190e6cb93afaa96191d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>knowledge article</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_0ce81f17dbf8d190e6cb93afaa96191d</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-07-25 16:49:06</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="DELETE" query="document_key=0ce81f17dbf8d190e6cb93afaa96191d"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</application>
+        <file_path/>
+        <instance_id>85f207696f9e420056007b2f5d3ee415</instance_id>
+        <instance_name>saicdemo1</instance_name>
+        <name>sys_cb_topic_0ce81f17dbf8d190e6cb93afaa96191d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic"><sys_cb_topic action="INSERT_OR_UPDATE"><applicability/><applicability_mode>query</applicability_mode><auto_resolution_enabled>false</auto_resolution_enabled><autopilot_topic>false</autopilot_topic><category/><channels/><connect_queue/><description/><expose_on_palette>false</expose_on_palette><flexible_conversation_switching>false</flexible_conversation_switching><graph>{"graph_api_version":"1.0.36","variables":{},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"6dec5296785242b8aa08470f08ef81d0":{"id":"6dec5296785242b8aa08470f08ef81d0","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"fc5488cae6be4d9cb14c19438aeb111b":{"id":"fc5488cae6be4d9cb14c19438aeb111b","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}}},"edges":[{"id":"6c1f924128ba494aa1040166f69310e5","edgeType":"Edge","source":"6dec5296785242b8aa08470f08ef81d0","target":"fc5488cae6be4d9cb14c19438aeb111b","sourcePort":"","targetPort":""}]}}}</graph><key_phrases>knowledge article</key_phrases><library>false</library><live_agent>false</live_agent><name>knowledge article</name><nlu_intent/><nlu_intent_label/><nlu_model/><nlu_model_label/><nlu_provider/><palette_label/><roles/><source_topic_id/><sys_class_name>sys_cb_topic</sys_class_name><sys_created_by>adminjon</sys_created_by><sys_created_on>2022-07-25 16:49:06</sys_created_on><sys_domain>global</sys_domain><sys_id>0ce81f17dbf8d190e6cb93afaa96191d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>knowledge article</sys_name><sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package><sys_policy/><sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope><sys_update_name>sys_cb_topic_0ce81f17dbf8d190e6cb93afaa96191d</sys_update_name><sys_updated_by>adminjon</sys_updated_by><sys_updated_on>2022-07-25 16:49:06</sys_updated_on><triggerable_by_notification>false</triggerable_by_notification><type>STANDARD</type><variables/></sys_cb_topic><sys_variable_value action="delete_multiple" query="document_key=0ce81f17dbf8d190e6cb93afaa96191d"/></record_update>]]></payload>
+        <payload_hash>517242646</payload_hash>
+        <record_name>knowledge article</record_name>
+        <reverted_from/>
+        <source>c4862e06dbbb81d0e6cb93afaa961929</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-07-25 16:49:07</sys_created_on>
+        <sys_id>d8e81357dbf8d190e6cb93afaa9619eb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18236432b810000001</sys_recorded_at>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-07-25 16:49:07</sys_updated_on>
+        <type>Topic</type>
+        <update_guid>d0e8135712f8d1907113e56c9a2490eb</update_guid>
+        <update_guid_history>d0e8135712f8d1907113e56c9a2490eb:517242646</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-07-25 16:52:32</sys_created_on>
+        <sys_db_object display_value="" name="sys_cb_topic">sys_cb_topic</sys_db_object>
+        <sys_id>1eeb428ecd1c46ab8446072135828581</sys_id>
+        <sys_metadata>0ce81f17dbf8d190e6cb93afaa96191d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>knowledge article</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_scope_delete display_value="">82a1a48d8e644a2684ce3d2556cef1a4</sys_scope_delete>
+        <sys_update_name>sys_cb_topic_0ce81f17dbf8d190e6cb93afaa96191d</sys_update_name>
+        <sys_update_version display_value="sys_cb_topic_0ce81f17dbf8d190e6cb93afaa96191d">d8e81357dbf8d190e6cb93afaa9619eb</sys_update_version>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-07-25 16:52:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

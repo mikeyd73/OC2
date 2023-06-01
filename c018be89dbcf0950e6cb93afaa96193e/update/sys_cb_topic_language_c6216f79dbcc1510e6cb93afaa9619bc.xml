@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic_language">
+    <sys_cb_topic_language action="INSERT_OR_UPDATE">
+        <cb_topic_id display_value="Packaging and Shipping">b921af39dbcc1510e6cb93afaa9619de</cb_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"node_id":"91d46f0d6e5b423b87a7afae3a267aea","variable_name":"title","nlu_entity":"","nlu_entity_label":""},{"node_id":"bda7d9312111483a98c853ce63b7deb7","variable_name":"ticket_number","nlu_entity":"","nlu_entity_label":""},{"node_id":"59e72a4e3b3b4b80806ad9b27821fd2c","variable_name":"requesteduser","nlu_entity":"","nlu_entity_label":""},{"node_id":"d3db879afa974000b12ce37f620dc326","variable_name":"parcel_details","nlu_entity":"","nlu_entity_label":""},{"node_id":"d84a8eada1c64d09bbfecb276a5788cb","variable_name":"shipping_type","nlu_entity":"","nlu_entity_label":""},{"node_id":"f9ee9e95a40242f7a34c1619fd74352b","variable_name":"line_one","nlu_entity":"","nlu_entity_label":""},{"node_id":"cb794b01d6854340a3a3c5d512e7ec78","variable_name":"city","nlu_entity":"","nlu_entity_label":""},{"node_id":"37782b47c29848dfac364ebc36abf9f3","variable_name":"postcode","nlu_entity":"","nlu_entity_label":""},{"node_id":"1db374a4ea424d40964f53345d6b947c","variable_name":"internal_destination","nlu_entity":"","nlu_entity_label":""},{"node_id":"940707e6076d4ab793054b84b7b7b69c","variable_name":"where","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>Packaging and shipping</nlu_intent>
+        <nlu_intent_label>Packaging and shipping</nlu_intent_label>
+        <nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model>
+        <nlu_model_label>OC Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cb_topic_language</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-13 18:47:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>c6216f79dbcc1510e6cb93afaa9619bc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_language_c6216f79dbcc1510e6cb93afaa9619bc</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-14 19:09:12</sys_updated_on>
+    </sys_cb_topic_language>
+</record_update>

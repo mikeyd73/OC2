@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "9c6f8d349544424984f2716de679d857": {
+          "id": "9c6f8d349544424984f2716de679d857",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "5c9b9a4ded7640eca960caad4b3d03c3": {
+          "id": "5c9b9a4ded7640eca960caad4b3d03c3",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "f3c737ef02d44d35a885d2dc432ca83e": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to provision a database?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "df6dfafad667430894b46d6d9f277a8f",
+          "id": "f3c737ef02d44d35a885d2dc432ca83e",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "517db1f56a5c4aabb40d1488536a019b": {
+          "id": "517db1f56a5c4aabb40d1488536a019b",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "86cd9aaf84bd4705a41affc6e7c784bf": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "requestedUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is requesting to provision a new database?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "c9674204d63149ec97b8d729a3b10827",
+          "id": "86cd9aaf84bd4705a41affc6e7c784bf",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "aa07d26d921445ffba9e577bf331713c": {
+          "id": "aa07d26d921445ffba9e577bf331713c",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': 'c0c5b2db4fbf4200086eeed18110c718',\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'cost_center': vaInputs.cost_center.getValue(),\n        'business_purpose': vaInputs.business_purporse.getValue(),\n\t\t'primary_contact': vaInputs.primary_contact.getValue(),\n\t}\n};\ncart.setRequestedFor(vaInputs.requesteduser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "ce26667c266c4ec4a5677b7212ea0019": {
+          "id": "ce26667c266c4ec4a5677b7212ea0019",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "83f9aa63fb7045c088f649e2a239f67b",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 71",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NTk5NDE3NzIyNCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "43923dfa29f34acf9f6ae1b1125c024c": {
+          "id": "43923dfa29f34acf9f6ae1b1125c024c",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Number",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID:  "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket_number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "b5a361fbb05144a385b2c6d9ff3c39d0": {
+          "stepType": "ChoicePrompt",
+          "name": "Business Purporse",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the business purprose?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "814dd4c888db49aeb0ea4923da28b398",
+          "id": "b5a361fbb05144a385b2c6d9ff3c39d0",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "4687bf4407504d438b7b8e7ec5e2d3f7": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "Cost_Center",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the cost center?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "e41d334009f24cc5be2ab71041c4d699",
+          "id": "4687bf4407504d438b7b8e7ec5e2d3f7",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No Cost Centers found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_idANYTHING"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "fa7265a120d8444f8513e0c3d73cf386": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "Primary Contact",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is the primary contact?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "8ca92878a602419cb67f786f34c1d889",
+          "id": "fa7265a120d8444f8513e0c3d73cf386",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No primary contacts found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        }
+      },
+      "edges": [
+        {
+          "id": "a46957a7e7874348b58a10b640a61870",
+          "edgeType": "Edge",
+          "source": "f3c737ef02d44d35a885d2dc432ca83e",
+          "target": "517db1f56a5c4aabb40d1488536a019b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7e45367ff3f4420db224eedb5abf1741",
+          "edgeType": "Branch",
+          "source": "517db1f56a5c4aabb40d1488536a019b",
+          "target": "5c9b9a4ded7640eca960caad4b3d03c3",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "0b38dd3a61cc4448b0e0ba660def52d8",
+          "edgeType": "Branch",
+          "source": "517db1f56a5c4aabb40d1488536a019b",
+          "target": "86cd9aaf84bd4705a41affc6e7c784bf",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "35ac21980a3248cf92c4f6a2bf491f1d",
+          "edgeType": "Edge",
+          "source": "9c6f8d349544424984f2716de679d857",
+          "target": "ce26667c266c4ec4a5677b7212ea0019",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5c1b63a07ecd4bf8826878e6a9a46d08",
+          "edgeType": "Edge",
+          "source": "ce26667c266c4ec4a5677b7212ea0019",
+          "target": "f3c737ef02d44d35a885d2dc432ca83e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5e91007096f04ebcbd46ad0340c4eb0e",
+          "edgeType": "Edge",
+          "source": "aa07d26d921445ffba9e577bf331713c",
+          "target": "43923dfa29f34acf9f6ae1b1125c024c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "bd322e2ec1d64f719df629ad520b8be4",
+          "edgeType": "Edge",
+          "source": "43923dfa29f34acf9f6ae1b1125c024c",
+          "target": "5c9b9a4ded7640eca960caad4b3d03c3",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f97a364295654aa9972c676b4fee4664",
+          "edgeType": "Edge",
+          "source": "86cd9aaf84bd4705a41affc6e7c784bf",
+          "target": "b5a361fbb05144a385b2c6d9ff3c39d0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e78fbb5299d647da92e62144ec59c343",
+          "edgeType": "Edge",
+          "source": "b5a361fbb05144a385b2c6d9ff3c39d0",
+          "target": "4687bf4407504d438b7b8e7ec5e2d3f7",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b4075c240b5a49029bac6607f0aa639e",
+          "edgeType": "Edge",
+          "source": "4687bf4407504d438b7b8e7ec5e2d3f7",
+          "target": "fa7265a120d8444f8513e0c3d73cf386",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "54ef3df7e1164c119af66b857d0d84af",
+          "edgeType": "Edge",
+          "source": "fa7265a120d8444f8513e0c3d73cf386",
+          "target": "aa07d26d921445ffba9e577bf331713c",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "df6dfafad667430894b46d6d9f277a8f": {
+      "id": "df6dfafad667430894b46d6d9f277a8f",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "c9674204d63149ec97b8d729a3b10827": {
+      "id": "c9674204d63149ec97b8d729a3b10827",
+      "name": "requesteduser",
+      "label": "RequestedUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "83f9aa63fb7045c088f649e2a239f67b": {
+      "id": "83f9aa63fb7045c088f649e2a239f67b",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "814dd4c888db49aeb0ea4923da28b398": {
+      "id": "814dd4c888db49aeb0ea4923da28b398",
+      "name": "business_purporse",
+      "label": "Business Purporse",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "KTLO",
+          "value": "ktlo"
+        },
+        {
+          "label": "Special Projects",
+          "value": "special_projects",
+          "checked": true
+        },
+        {
+          "label": "Testing",
+          "value": "testing",
+          "checked": true
+        },
+        {
+          "label": "Other",
+          "value": "other",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "e41d334009f24cc5be2ab71041c4d699": {
+      "id": "e41d334009f24cc5be2ab71041c4d699",
+      "name": "cost_center",
+      "label": "Cost_Center",
+      "varType": "reference",
+      "table": "cmn_department",
+      "category": "vaInputs"
+    },
+    "8ca92878a602419cb67f786f34c1d889": {
+      "id": "8ca92878a602419cb67f786f34c1d889",
+      "name": "primary_contact",
+      "label": "Primary Contact",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Provision a database</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Provision a database</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-23 14:18:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b173424ddbdcd550e6cb93afaa9619f7</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Provision a database</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_b173424ddbdcd550e6cb93afaa9619f7</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-23 14:55:20</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=b173424ddbdcd550e6cb93afaa9619f7"/>
+</record_update>

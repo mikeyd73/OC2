@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic_language">
+    <sys_cb_topic_language action="INSERT_OR_UPDATE">
+        <cb_topic_id display_value="Paper and Supplies">c18cba661b17451055d178cf034bcb35</cb_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"node_id":"d5f6d853d55945b6a72dfdc0ec40a93b","variable_name":"title","nlu_entity":"","nlu_entity_label":""},{"node_id":"e4900c8aa1844e219cb0ebdc67360286","variable_name":"order_item","nlu_entity":"","nlu_entity_label":""},{"node_id":"8dea8959c75d465fa0ef9d7b0aa556e6","variable_name":"copier_reams","nlu_entity":"","nlu_entity_label":""},{"node_id":"61798988da03488faa738326929e2ab5","variable_name":"screen_wipes","nlu_entity":"","nlu_entity_label":""},{"node_id":"d0e51b8de42243038fa183cea80340d7","variable_name":"pens","nlu_entity":"","nlu_entity_label":""},{"node_id":"880071885f6a4494bd8e460fcb3f5149","variable_name":"additional_requirements","nlu_entity":"","nlu_entity_label":""},{"node_id":"f8fc600a3aa34ac9a667a2ec1b3f0c2c","variable_name":"requestedfor","nlu_entity":"","nlu_entity_label":""},{"node_id":"ee14e0741f53495d84426bcb5d75baf8","variable_name":"userrequestingchoice","nlu_entity":"","nlu_entity_label":""},{"node_id":"668847c371b848e0a998a593080e1184","variable_name":"requestingquestion","nlu_entity":"","nlu_entity_label":""},{"node_id":"4be79d4d8f094935991d0e1f5f4185c5","variable_name":"requestinguserquestion","nlu_entity":"","nlu_entity_label":""},{"node_id":"f41017ac22aa4e41a7897ee6f3a98cda","variable_name":"requesteduser","nlu_entity":"","nlu_entity_label":""},{"node_id":"b468b22360a741f39deaae670fb3752b","variable_name":"ticket_number","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>Paper and Supplies</nlu_intent>
+        <nlu_intent_label>Paper and Supplies</nlu_intent_label>
+        <nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model>
+        <nlu_model_label>OC Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cb_topic_language</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-09 17:32:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>14508b2e1b17451055d178cf034bcb33</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_language_14508b2e1b17451055d178cf034bcb33</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-07-19 17:07:51</sys_updated_on>
+    </sys_cb_topic_language>
+</record_update>

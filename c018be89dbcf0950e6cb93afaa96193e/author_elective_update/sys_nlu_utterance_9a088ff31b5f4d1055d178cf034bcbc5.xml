@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_nlu_utterance">
+    <sys_nlu_utterance action="DELETE">
+        <intent display_value="Desk Set Up">57f78bf31b5f4d1055d178cf034bcbdf</intent>
+        <original_utterance/>
+        <primary_utterance/>
+        <sys_class_name>sys_nlu_utterance</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-13 15:18:19</sys_created_on>
+        <sys_id>9a088ff31b5f4d1055d178cf034bcbc5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>desk set up</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_nlu_utterance_9a088ff31b5f4d1055d178cf034bcbc5</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-13 15:18:19</sys_updated_on>
+        <utterance>desk set up</utterance>
+    </sys_nlu_utterance>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</application>
+        <file_path/>
+        <instance_id>85f207696f9e420056007b2f5d3ee415</instance_id>
+        <instance_name>saicdemo1</instance_name>
+        <name>sys_nlu_utterance_9a088ff31b5f4d1055d178cf034bcbc5</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_nlu_utterance"><sys_nlu_utterance action="INSERT_OR_UPDATE"><intent display_value="Desk Set Up">57f78bf31b5f4d1055d178cf034bcbdf</intent><original_utterance/><primary_utterance/><sys_class_name>sys_nlu_utterance</sys_class_name><sys_created_by>adminjon</sys_created_by><sys_created_on>2022-05-13 15:18:19</sys_created_on><sys_id>9a088ff31b5f4d1055d178cf034bcbc5</sys_id><sys_mod_count>0</sys_mod_count><sys_name>desk set up</sys_name><sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package><sys_policy/><sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope><sys_update_name>sys_nlu_utterance_9a088ff31b5f4d1055d178cf034bcbc5</sys_update_name><sys_updated_by>adminjon</sys_updated_by><sys_updated_on>2022-05-13 15:18:19</sys_updated_on><utterance>desk set up</utterance></sys_nlu_utterance></record_update>]]></payload>
+        <payload_hash>320050276</payload_hash>
+        <record_name>desk set up</record_name>
+        <reverted_from/>
+        <source>c818be89dbcf0950e6cb93afaa961940</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-13 15:18:19</sys_created_on>
+        <sys_id>5a088ff31b5f4d1055d178cf034bcbc8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>180bdffcacc0000001</sys_recorded_at>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-13 15:18:19</sys_updated_on>
+        <type>NLU Utterance</type>
+        <update_guid>52088ff3ca5f4d10d89ee26facdc74c8</update_guid>
+        <update_guid_history>52088ff3ca5f4d10d89ee26facdc74c8:320050276</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-02 18:25:02</sys_created_on>
+        <sys_db_object display_value="" name="sys_nlu_utterance">sys_nlu_utterance</sys_db_object>
+        <sys_id>135ad305bf1f4d36abb90d558013c964</sys_id>
+        <sys_metadata>9a088ff31b5f4d1055d178cf034bcbc5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>desk set up</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_scope_delete display_value="">82a1a48d8e644a2684ce3d2556cef1a4</sys_scope_delete>
+        <sys_update_name>sys_nlu_utterance_9a088ff31b5f4d1055d178cf034bcbc5</sys_update_name>
+        <sys_update_version display_value="sys_nlu_utterance_9a088ff31b5f4d1055d178cf034bcbc5">5a088ff31b5f4d1055d178cf034bcbc8</sys_update_version>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-02 18:25:02</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

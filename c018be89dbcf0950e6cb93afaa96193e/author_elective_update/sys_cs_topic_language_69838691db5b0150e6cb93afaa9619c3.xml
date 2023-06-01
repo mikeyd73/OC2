@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
+    <sys_cs_topic_language action="DELETE">
+        <cs_topic_id display_value="Remove End-User Account">59838691db5b0150e6cb93afaa9619bd</cs_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"variable_name":"usertoberemoved","nlu_entity":"PERSON","nlu_entity_label":"PERSON"},{"variable_name":"rightfax_deactivated","nlu_entity":"","nlu_entity_label":""},{"variable_name":"mailboxdeactivated","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccessneeded","nlu_entity":"","nlu_entity_label":""},{"variable_name":"notes_comments","nlu_entity":"","nlu_entity_label":""},{"variable_name":"scenerios","nlu_entity":"","nlu_entity_label":""},{"variable_name":"usersaccesstoaccount","nlu_entity":"","nlu_entity_label":""},{"variable_name":"enddateextendedaccess","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_enddate2","nlu_entity":"","nlu_entity_label":""},{"variable_name":"outofofficeneeded","nlu_entity":"","nlu_entity_label":""},{"variable_name":"emailhiddengal","nlu_entity":"","nlu_entity_label":""},{"variable_name":"mailboxreceivemessages","nlu_entity":"","nlu_entity_label":""},{"variable_name":"out_of_office_message_detail","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_mailbox","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_onedrive","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_sharepoint","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_pc","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_shareddrive","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>Remove End User Account</nlu_intent>
+        <nlu_intent_label>Remove End User Account</nlu_intent_label>
+        <nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model>
+        <nlu_model_label>OC Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cs_topic_language</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-05 15:54:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>69838691db5b0150e6cb93afaa9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cs_topic_language_69838691db5b0150e6cb93afaa9619c3</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-05 15:54:10</sys_updated_on>
+    </sys_cs_topic_language>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</application>
+        <file_path/>
+        <instance_id>85f207696f9e420056007b2f5d3ee415</instance_id>
+        <instance_name>saicdemo1</instance_name>
+        <name>sys_cs_topic_language_69838691db5b0150e6cb93afaa9619c3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language"><sys_cs_topic_language action="INSERT_OR_UPDATE"><cs_topic_id display_value="Remove End-User Account">59838691db5b0150e6cb93afaa9619bd</cs_topic_id><language_code>en</language_code><nlu_entities>[{"variable_name":"usertoberemoved","nlu_entity":"PERSON","nlu_entity_label":"PERSON"},{"variable_name":"rightfax_deactivated","nlu_entity":"","nlu_entity_label":""},{"variable_name":"mailboxdeactivated","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccessneeded","nlu_entity":"","nlu_entity_label":""},{"variable_name":"notes_comments","nlu_entity":"","nlu_entity_label":""},{"variable_name":"scenerios","nlu_entity":"","nlu_entity_label":""},{"variable_name":"usersaccesstoaccount","nlu_entity":"","nlu_entity_label":""},{"variable_name":"enddateextendedaccess","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_enddate2","nlu_entity":"","nlu_entity_label":""},{"variable_name":"outofofficeneeded","nlu_entity":"","nlu_entity_label":""},{"variable_name":"emailhiddengal","nlu_entity":"","nlu_entity_label":""},{"variable_name":"mailboxreceivemessages","nlu_entity":"","nlu_entity_label":""},{"variable_name":"out_of_office_message_detail","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_mailbox","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_onedrive","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_sharepoint","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_pc","nlu_entity":"","nlu_entity_label":""},{"variable_name":"extendedaccess_shareddrive","nlu_entity":"","nlu_entity_label":""}]</nlu_entities><nlu_intent>Remove End User Account</nlu_intent><nlu_intent_label>Remove End User Account</nlu_intent_label><nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model><nlu_model_label>OC Model</nlu_model_label><nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider><sys_class_name>sys_cs_topic_language</sys_class_name><sys_created_by>adminjon</sys_created_by><sys_created_on>2022-05-05 15:54:10</sys_created_on><sys_domain>global</sys_domain><sys_id>69838691db5b0150e6cb93afaa9619c3</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package><sys_policy/><sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope><sys_update_name>sys_cs_topic_language_69838691db5b0150e6cb93afaa9619c3</sys_update_name><sys_updated_by>adminjon</sys_updated_by><sys_updated_on>2022-05-05 15:54:10</sys_updated_on></sys_cs_topic_language></record_update>]]></payload>
+        <payload_hash>-744663639</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>c818be89dbcf0950e6cb93afaa961940</source>
+        <source_table>sys_update_set</source_table>
+        <state>current</state>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-05 15:54:10</sys_created_on>
+        <sys_id>25838691db5b0150e6cb93afaa9619c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18094edbe470000001</sys_recorded_at>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-05 15:54:10</sys_updated_on>
+        <type>CS Topic Language</type>
+        <update_guid>2d838691685b0150a8c111ba4cf261c4</update_guid>
+        <update_guid_history>2d838691685b0150a8c111ba4cf261c4:-744663639</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-06 04:06:51</sys_created_on>
+        <sys_db_object display_value="" name="sys_cs_topic_language">sys_cs_topic_language</sys_db_object>
+        <sys_id>31c5fea1f22e4a509588afe87731fe40</sys_id>
+        <sys_metadata>69838691db5b0150e6cb93afaa9619c3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_scope_delete display_value="">82a1a48d8e644a2684ce3d2556cef1a4</sys_scope_delete>
+        <sys_update_name>sys_cs_topic_language_69838691db5b0150e6cb93afaa9619c3</sys_update_name>
+        <sys_update_version display_value="sys_cs_topic_language_69838691db5b0150e6cb93afaa9619c3">25838691db5b0150e6cb93afaa9619c5</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-06 04:06:51</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

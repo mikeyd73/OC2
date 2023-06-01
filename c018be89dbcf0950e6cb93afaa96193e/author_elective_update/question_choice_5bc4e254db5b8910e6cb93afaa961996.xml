@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <order>200</order>
+        <published_ref display_value="Scenario 2: “Only the current owner of the account needs to keep extended and “A">28916b53db0f0510e6cb93afaa9619a1</published_ref>
+        <question display_value="Scenarios">97c4e254db5b8910e6cb93afaa96198c</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-02 15:45:38</sys_created_on>
+        <sys_id>5bc4e254db5b8910e6cb93afaa961996</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Scenario 2: “Only the current owner of the account needs to keep extended and “A</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>question_choice_5bc4e254db5b8910e6cb93afaa961996</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-02 15:45:38</sys_updated_on>
+        <text>Scenario 2: “Only the current owner of the account needs to keep extended and “A</text>
+        <value>scenario_2</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=5bc4e254db5b8910e6cb93afaa961996"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</application>
+        <file_path/>
+        <instance_id>85f207696f9e420056007b2f5d3ee415</instance_id>
+        <instance_name>saicdemo1</instance_name>
+        <name>question_choice_5bc4e254db5b8910e6cb93afaa961996</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><order>200</order><published_ref display_value="Scenario 2: “Only the current owner of the account needs to keep extended and “A">28916b53db0f0510e6cb93afaa9619a1</published_ref><question display_value="Scenarios">97c4e254db5b8910e6cb93afaa96198c</question><sys_class_name>question_choice</sys_class_name><sys_created_by>adminjon</sys_created_by><sys_created_on>2022-05-02 15:45:38</sys_created_on><sys_id>5bc4e254db5b8910e6cb93afaa961996</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Scenario 2: “Only the current owner of the account needs to keep extended and “A</sys_name><sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package><sys_policy/><sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope><sys_update_name>question_choice_5bc4e254db5b8910e6cb93afaa961996</sys_update_name><sys_updated_by>adminjon</sys_updated_by><sys_updated_on>2022-05-02 15:45:38</sys_updated_on><text>Scenario 2: “Only the current owner of the account needs to keep extended and “A</text><value>scenario_2</value></question_choice><fx_price action="delete_multiple" query="id=5bc4e254db5b8910e6cb93afaa961996"/></record_update>]]></payload>
+        <payload_hash>-1448990728</payload_hash>
+        <record_name>Scenario 2: “Only the current owner of the account needs to keep extended and “A</record_name>
+        <reverted_from/>
+        <source>c818be89dbcf0950e6cb93afaa961940</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-02 15:45:38</sys_created_on>
+        <sys_id>97c4e254db5b8910e6cb93afaa961999</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1808572da550000001</sys_recorded_at>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-02 15:45:38</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>dbc4e254f35b89101e72da07ab6d5e98</update_guid>
+        <update_guid_history>dbc4e254f35b89101e72da07ab6d5e98:-1448990728</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Scenario 2: “Only the current owner of the account needs to keep extended and “A">42f9aa5cdb5b8910e6cb93afaa9619dd</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-02 16:08:13</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>5b3cbe7fd77f4ec4a31931a18dd1e3c1</sys_id>
+        <sys_metadata>5bc4e254db5b8910e6cb93afaa961996</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Scenario 2: “Only the current owner of the account needs to keep extended and “A</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_scope_delete display_value="">82a1a48d8e644a2684ce3d2556cef1a4</sys_scope_delete>
+        <sys_update_name>question_choice_5bc4e254db5b8910e6cb93afaa961996</sys_update_name>
+        <sys_update_version display_value="question_choice_5bc4e254db5b8910e6cb93afaa961996">97c4e254db5b8910e6cb93afaa961999</sys_update_version>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-02 16:08:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

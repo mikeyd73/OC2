@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "c974eb606a3d4374a1d8706e374dc851": {
+          "id": "c974eb606a3d4374a1d8706e374dc851",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "f69400bbd4b64b4b9886e65855d42cc0": {
+          "id": "f69400bbd4b64b4b9886e65855d42cc0",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "1d2e05f494024a86a52ab5d385497c94": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to install new software"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "77cf7a8529b24fca93854d61f47bef31",
+          "id": "1d2e05f494024a86a52ab5d385497c94",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "45174575b9a04ca4b9ae504650564ab6": {
+          "id": "45174575b9a04ca4b9ae504650564ab6",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "89cdecc4f95d4d72b7523c04c50d640f": {
+          "id": "89cdecc4f95d4d72b7523c04c50d640f",
+          "stepType": "Prompt",
+          "name": "software",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What software do you need installed?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "1a9aa90a2878419898473e25e47f6174",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "1a4ec78dbc8f4ce89decd281483a9f4c": {
+          "stepType": "ChoicePrompt",
+          "name": "mediaDisks",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you have the software media disks?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "902bff23ebd34bb1ac5b6b91864ab689",
+          "id": "1a4ec78dbc8f4ce89decd281483a9f4c",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "415c07fea4bc4295b2be0f211fd79a4e": {
+          "id": "415c07fea4bc4295b2be0f211fd79a4e",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': '10d69689c611227600ffeba41c664824',\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'mediaDisks': vaInputs.mediadisks.getValue(),\n        'software' : vaInputs.software.getValue()\n\t}\n};\ncart.setRequestedFor(vaInputs.requesteduser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()\n\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "16d16f48e4b54a4e8f768f2dc42e2744": {
+          "id": "16d16f48e4b54a4e8f768f2dc42e2744",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "661c69329e4144609ed9d3bd462cb792",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 11",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDI3MjE0MTI1NSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "f2d2c96db9b04a3eb4b347fecb3918a4": {
+          "id": "f2d2c96db9b04a3eb4b347fecb3918a4",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Item",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket_number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "8ccc04c98274433fa6369ea8555e44ff",
+          "edgeType": "Edge",
+          "source": "1d2e05f494024a86a52ab5d385497c94",
+          "target": "45174575b9a04ca4b9ae504650564ab6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a7bf25b2e692451980a2243ef0129e49",
+          "edgeType": "Branch",
+          "source": "45174575b9a04ca4b9ae504650564ab6",
+          "target": "f69400bbd4b64b4b9886e65855d42cc0",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "8d3242906ebf4565b95a2a286398be9e",
+          "edgeType": "Branch",
+          "source": "45174575b9a04ca4b9ae504650564ab6",
+          "target": "89cdecc4f95d4d72b7523c04c50d640f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "9dc96daf9c664bf98334f79e5effdf64",
+          "edgeType": "Edge",
+          "source": "89cdecc4f95d4d72b7523c04c50d640f",
+          "target": "1a4ec78dbc8f4ce89decd281483a9f4c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e6a75c34440c410d93c9236cfb959358",
+          "edgeType": "Edge",
+          "source": "1a4ec78dbc8f4ce89decd281483a9f4c",
+          "target": "415c07fea4bc4295b2be0f211fd79a4e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5efc7de53a0040eaae42021de9a0b808",
+          "edgeType": "Edge",
+          "source": "c974eb606a3d4374a1d8706e374dc851",
+          "target": "16d16f48e4b54a4e8f768f2dc42e2744",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "357827a587bd41afb98f1a5733044e18",
+          "edgeType": "Edge",
+          "source": "16d16f48e4b54a4e8f768f2dc42e2744",
+          "target": "1d2e05f494024a86a52ab5d385497c94",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "4fbbee4543724a18ba27613f67a696eb",
+          "edgeType": "Edge",
+          "source": "415c07fea4bc4295b2be0f211fd79a4e",
+          "target": "f2d2c96db9b04a3eb4b347fecb3918a4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d9d59f869d844099af80e7b966353197",
+          "edgeType": "Edge",
+          "source": "f2d2c96db9b04a3eb4b347fecb3918a4",
+          "target": "f69400bbd4b64b4b9886e65855d42cc0",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "77cf7a8529b24fca93854d61f47bef31": {
+      "id": "77cf7a8529b24fca93854d61f47bef31",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "1a9aa90a2878419898473e25e47f6174": {
+      "id": "1a9aa90a2878419898473e25e47f6174",
+      "name": "software",
+      "label": "Software",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NDI3MTU3MTA1OCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "902bff23ebd34bb1ac5b6b91864ab689": {
+      "id": "902bff23ebd34bb1ac5b6b91864ab689",
+      "name": "mediadisks",
+      "label": "MediaDisks",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "661c69329e4144609ed9d3bd462cb792": {
+      "id": "661c69329e4144609ed9d3bd462cb792",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Install Software</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Install Software</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-03 15:47:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>892893e2dbbf45d0e6cb93afaa9619bb</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Install Software</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_892893e2dbbf45d0e6cb93afaa9619bb</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-03 16:03:06</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=892893e2dbbf45d0e6cb93afaa9619bb"/>
+</record_update>

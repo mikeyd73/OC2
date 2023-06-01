@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="DELETE">
+        <catalog_item display_value="Remove End-User Account">162c7681db034950e6cb93afaa961925</catalog_item>
+        <catalog_variable>IO:563da3c9db074950e6cb93afaa9619bb</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <mandatory>ignore</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-04-22 18:55:34</sys_created_on>
+        <sys_id>8860bfcddb074950e6cb93afaa96199b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>is_a_mailbox_out_of_office_message_needed</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_8860bfcddb074950e6cb93afaa96199b</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-04-22 18:55:34</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Remove End-User Account UI policy">6d50bbcddb074950e6cb93afaa961976</ui_policy>
+        <variable>is_a_mailbox_out_of_office_message_needed</variable>
+        <variable_set/>
+        <visible>ignore</visible>
+    </catalog_ui_policy_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</application>
+        <file_path/>
+        <instance_id>85f207696f9e420056007b2f5d3ee415</instance_id>
+        <instance_name>saicdemo1</instance_name>
+        <name>catalog_ui_policy_action_8860bfcddb074950e6cb93afaa96199b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action"><catalog_ui_policy_action action="INSERT_OR_UPDATE"><catalog_item display_value="Remove End-User Account">162c7681db034950e6cb93afaa961925</catalog_item><catalog_variable>IO:563da3c9db074950e6cb93afaa9619bb</catalog_variable><cleared>false</cleared><disabled>ignore</disabled><field/><mandatory>ignore</mandatory><order>100</order><sys_class_name>catalog_ui_policy_action</sys_class_name><sys_created_by>adminjon</sys_created_by><sys_created_on>2022-04-22 18:55:34</sys_created_on><sys_id>8860bfcddb074950e6cb93afaa96199b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>is_a_mailbox_out_of_office_message_needed</sys_name><sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package><sys_policy/><sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope><sys_update_name>catalog_ui_policy_action_8860bfcddb074950e6cb93afaa96199b</sys_update_name><sys_updated_by>adminjon</sys_updated_by><sys_updated_on>2022-04-22 18:55:34</sys_updated_on><table/><ui_policy display_value="Remove End-User Account UI policy">6d50bbcddb074950e6cb93afaa961976</ui_policy><variable>is_a_mailbox_out_of_office_message_needed</variable><variable_set/><visible>ignore</visible></catalog_ui_policy_action></record_update>]]></payload>
+        <payload_hash>1480624090</payload_hash>
+        <record_name>is_a_mailbox_out_of_office_message_needed</record_name>
+        <reverted_from/>
+        <source>c818be89dbcf0950e6cb93afaa961940</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-04-22 18:55:34</sys_created_on>
+        <sys_id>c860bfcddb074950e6cb93afaa96199e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18052a125ce0000001</sys_recorded_at>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-04-22 18:55:34</sys_updated_on>
+        <type>Catalog UI Policy Action</type>
+        <update_guid>0060bfcd70074950df12f13531c5b89e</update_guid>
+        <update_guid_history>0060bfcd70074950df12f13531c5b89e:1480624090</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="is_a_mailbox_out_of_office_message_needed">3b49dbd3dbcb0510e6cb93afaa9619d0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-04-29 17:01:07</sys_created_on>
+        <sys_db_object display_value="" name="catalog_ui_policy_action">catalog_ui_policy_action</sys_db_object>
+        <sys_id>0a2cca44ef3745188230033d717b7e40</sys_id>
+        <sys_metadata>8860bfcddb074950e6cb93afaa96199b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>is_a_mailbox_out_of_office_message_needed</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_scope_delete display_value="">82a1a48d8e644a2684ce3d2556cef1a4</sys_scope_delete>
+        <sys_update_name>catalog_ui_policy_action_8860bfcddb074950e6cb93afaa96199b</sys_update_name>
+        <sys_update_version display_value="catalog_ui_policy_action_8860bfcddb074950e6cb93afaa96199b">c860bfcddb074950e6cb93afaa96199e</sys_update_version>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-04-29 17:01:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description>This service is for the pro-active engagement to tune your virtual server. As usage changes over time, or new initiatives are being put in place, it may require the tuning and adjustment of your storage, memory, and other basic services.</description>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "63fcead5c02e4c0bbf1eefd64418a796": {
+          "id": "63fcead5c02e4c0bbf1eefd64418a796",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "592faacd9fc44c61a376996505cd70ae": {
+          "id": "592faacd9fc44c61a376996505cd70ae",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "b8f95a18d0f342898f9f7051e5a7b0c0": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Are you wanting to enter a ticket for Server Turning?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "dd0305e53042414480e6a79f9d1b0eb1",
+          "id": "b8f95a18d0f342898f9f7051e5a7b0c0",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "08e4e3a3abfa4d46bb543ce61c914525": {
+          "id": "08e4e3a3abfa4d46bb543ce61c914525",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "a8f8dcf1398b47cab9707abaa18fcd0f": {
+          "id": "a8f8dcf1398b47cab9707abaa18fcd0f",
+          "stepType": "Prompt",
+          "name": "vm",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Enter your VM's name"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "d8e84bd2869d4ad1ba7fda78a69118ef",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "a3c4c612a3054d48977d6d216fd9d39b": {
+          "id": "a3c4c612a3054d48977d6d216fd9d39b",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': '57d6feda4fff0200086eeed18110c731',\t\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'vm': vaInputs.vm.getValue(),\n\t\t'cost_center': vaInputs.cost_center.getValue(),\n\t\t'primary_contact': vaInputs.primary_contact.getValue(),\n\t\t'business_purpose': vaInputs.business_purpose_choice.getValue(),\n\t}\n};\ncart.setRequestedFor(vaInputs.user);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=Number=checkoutVals.request_number;\n})()",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "0642328673244e4f8e86732e7a5cda1b": {
+          "id": "0642328673244e4f8e86732e7a5cda1b",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "0609b4cc05804856af13f3c8f9c5cc6f",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 40",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDAxMDU0MzM5MSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "c8342269d7f449d8a3ebb71f8dcfc112": {
+          "id": "c8342269d7f449d8a3ebb71f8dcfc112",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Item",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket_number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "2907b09b43f24096b2f5ccb308180c71": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "Cost Center",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What cost center will be billed?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "541f779e82da4f84bc15409cb4db01ed",
+          "id": "2907b09b43f24096b2f5ccb308180c71",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No departments found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "nameANYTHING"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "2e76a15d74a447a988fc12dd09a162bf": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "primary contact",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is the primary contact"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "d3d6f032f1cf46e095c582f9606426dc",
+          "id": "2e76a15d74a447a988fc12dd09a162bf",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "no users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "709911926df14363bbfab69187ac8d63": {
+          "stepType": "ChoicePrompt",
+          "name": "Business Purpose Choice",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the business purpose"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "0f848ec4dbff4cbfbfbc1a36ff4ad9e4",
+          "id": "709911926df14363bbfab69187ac8d63",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "7a3b8a218fc14a30b0354f0dfb074dc7": {
+          "id": "7a3b8a218fc14a30b0354f0dfb074dc7",
+          "stepType": "SlotFillPrompt",
+          "name": "ktlo",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "14714740ce274809b75a35d467a3abe1",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 66",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDAxODU5ODU4NSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "92d1f46fd39840bc913cb581441c6f2f": {
+          "id": "92d1f46fd39840bc913cb581441c6f2f",
+          "stepType": "SlotFillPrompt",
+          "name": "special_projects",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "7027f23b0282445caa8fd53cd0480a57",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 80",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDAxODYxMjc4NiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "d6e02695d3a645d78923abc17ff97ebd": {
+          "id": "d6e02695d3a645d78923abc17ff97ebd",
+          "stepType": "SlotFillPrompt",
+          "name": "testing",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "5c27e0b184224e1788c40aed1edf7a5c",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 71",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDAxODYzMTg2NiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "e260d3cffd3a4678b3b9b64617cedffb": {
+          "id": "e260d3cffd3a4678b3b9b64617cedffb",
+          "stepType": "SlotFillPrompt",
+          "name": "other",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "c93a26f5d9e14ff8aa8bfbe03b23495c",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 78",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDAxODY0MTQzMSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        }
+      },
+      "edges": [
+        {
+          "id": "2b1ddf02668443b89aec197f84ba6a21",
+          "edgeType": "Edge",
+          "source": "709911926df14363bbfab69187ac8d63",
+          "target": "a8f8dcf1398b47cab9707abaa18fcd0f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0aab376613ec489a99b8de2aa5673e3d",
+          "edgeType": "Edge",
+          "source": "b8f95a18d0f342898f9f7051e5a7b0c0",
+          "target": "08e4e3a3abfa4d46bb543ce61c914525",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1a5310dbfb70425486ec80891c32c627",
+          "edgeType": "Branch",
+          "source": "08e4e3a3abfa4d46bb543ce61c914525",
+          "target": "592faacd9fc44c61a376996505cd70ae",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "7f78c48088b641f49628e4d43f5b6a5d",
+          "edgeType": "Edge",
+          "source": "a8f8dcf1398b47cab9707abaa18fcd0f",
+          "target": "a3c4c612a3054d48977d6d216fd9d39b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5916187f06f2401b92af05e4fe812e58",
+          "edgeType": "Edge",
+          "source": "0642328673244e4f8e86732e7a5cda1b",
+          "target": "b8f95a18d0f342898f9f7051e5a7b0c0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "76c8ae0416b24073aa01298e5c607cef",
+          "edgeType": "Edge",
+          "source": "a3c4c612a3054d48977d6d216fd9d39b",
+          "target": "c8342269d7f449d8a3ebb71f8dcfc112",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "12184a646d6c4aada4085029421ad199",
+          "edgeType": "Edge",
+          "source": "c8342269d7f449d8a3ebb71f8dcfc112",
+          "target": "592faacd9fc44c61a376996505cd70ae",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9745f4895f3f47c6ac1fc0fd4bf51f41",
+          "edgeType": "Branch",
+          "source": "08e4e3a3abfa4d46bb543ce61c914525",
+          "target": "2e76a15d74a447a988fc12dd09a162bf",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "e3a6f1ddf0e640ae8984e08d3b0a7ee0",
+          "edgeType": "Edge",
+          "source": "2e76a15d74a447a988fc12dd09a162bf",
+          "target": "2907b09b43f24096b2f5ccb308180c71",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "fd605e2030d443bebb26cf4e8e8614f6",
+          "edgeType": "Edge",
+          "source": "2907b09b43f24096b2f5ccb308180c71",
+          "target": "709911926df14363bbfab69187ac8d63",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9bdf6566eb1e423a88eb2eef2bf3d4d7",
+          "edgeType": "Edge",
+          "source": "7a3b8a218fc14a30b0354f0dfb074dc7",
+          "target": "0642328673244e4f8e86732e7a5cda1b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f149deb0216842bdb4f0eb17e846d7ac",
+          "edgeType": "Edge",
+          "source": "92d1f46fd39840bc913cb581441c6f2f",
+          "target": "7a3b8a218fc14a30b0354f0dfb074dc7",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "fbff425dce244b0397f6ebf5b3af4a10",
+          "edgeType": "Edge",
+          "source": "d6e02695d3a645d78923abc17ff97ebd",
+          "target": "92d1f46fd39840bc913cb581441c6f2f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cca6ab5edd6f4c85a2593b185235a484",
+          "edgeType": "Edge",
+          "source": "63fcead5c02e4c0bbf1eefd64418a796",
+          "target": "e260d3cffd3a4678b3b9b64617cedffb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "3f0ad00a4ef245b38c9b6beb93a63693",
+          "edgeType": "Edge",
+          "source": "e260d3cffd3a4678b3b9b64617cedffb",
+          "target": "d6e02695d3a645d78923abc17ff97ebd",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "dd0305e53042414480e6a79f9d1b0eb1": {
+      "id": "dd0305e53042414480e6a79f9d1b0eb1",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "d8e84bd2869d4ad1ba7fda78a69118ef": {
+      "id": "d8e84bd2869d4ad1ba7fda78a69118ef",
+      "name": "vm",
+      "label": "Vm",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NDAxMDM2MDQxMiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "0609b4cc05804856af13f3c8f9c5cc6f": {
+      "id": "0609b4cc05804856af13f3c8f9c5cc6f",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "541f779e82da4f84bc15409cb4db01ed": {
+      "id": "541f779e82da4f84bc15409cb4db01ed",
+      "name": "cost_center",
+      "label": "Cost Center",
+      "varType": "reference",
+      "table": "cmn_department",
+      "category": "vaInputs"
+    },
+    "d3d6f032f1cf46e095c582f9606426dc": {
+      "id": "d3d6f032f1cf46e095c582f9606426dc",
+      "name": "primary_contact",
+      "label": "Primary Contact",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "0f848ec4dbff4cbfbfbc1a36ff4ad9e4": {
+      "id": "0f848ec4dbff4cbfbfbc1a36ff4ad9e4",
+      "name": "business_purpose_choice",
+      "label": "Business Purpose Choice",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "KTLO",
+          "value": "ktlo"
+        },
+        {
+          "label": "Special Projects",
+          "value": "special_projects",
+          "checked": true
+        },
+        {
+          "label": "Testing",
+          "value": "testing",
+          "checked": true
+        },
+        {
+          "label": "Other",
+          "value": "other",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "14714740ce274809b75a35d467a3abe1": {
+      "id": "14714740ce274809b75a35d467a3abe1",
+      "name": "ktlo",
+      "label": "Ktlo",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "7027f23b0282445caa8fd53cd0480a57": {
+      "id": "7027f23b0282445caa8fd53cd0480a57",
+      "name": "special_projects",
+      "label": "Special_projects",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "5c27e0b184224e1788c40aed1edf7a5c": {
+      "id": "5c27e0b184224e1788c40aed1edf7a5c",
+      "name": "testing",
+      "label": "Testing",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "c93a26f5d9e14ff8aa8bfbe03b23495c": {
+      "id": "c93a26f5d9e14ff8aa8bfbe03b23495c",
+      "name": "other",
+      "label": "Other",
+      "varType": "string",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Server Tuning</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Server Tuning</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-31 15:11:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f6133be1db3301d0e6cb93afaa961945</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Server Tuning</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_f6133be1db3301d0e6cb93afaa961945</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-31 17:49:13</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=f6133be1db3301d0e6cb93afaa961945"/>
+</record_update>

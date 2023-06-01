@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application>Virtual Agent</application>
+        <code/>
+        <commented_message/>
+        <key>screen wipes(tube of 20)</key>
+        <language>en</language>
+        <message>Screen Wipes(tube of 20)</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-09 18:43:06</sys_created_on>
+        <sys_id>0f809fe61b97451055d178cf034bcb2a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>screen wipes(tube of 20)</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_ui_message_0f809fe61b97451055d178cf034bcb2a</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-09 18:43:06</sys_updated_on>
+    </sys_ui_message>
+</record_update>

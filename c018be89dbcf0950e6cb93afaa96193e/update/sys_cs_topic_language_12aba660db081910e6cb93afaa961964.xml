@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
+    <sys_cs_topic_language action="INSERT_OR_UPDATE">
+        <cs_topic_id display_value="New Hire">8eaba660db081910e6cb93afaa96195d</cs_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"variable_name":"title","nlu_entity":"","nlu_entity_label":""},{"variable_name":"requesteduser","nlu_entity":"","nlu_entity_label":""},{"variable_name":"ticket_number","nlu_entity":"","nlu_entity_label":""},{"variable_name":"hiring_manager","nlu_entity":"","nlu_entity_label":""},{"variable_name":"group","nlu_entity":"","nlu_entity_label":""},{"variable_name":"remote","nlu_entity":"","nlu_entity_label":""},{"variable_name":"office","nlu_entity":"","nlu_entity_label":""},{"variable_name":"nonstandard","nlu_entity":"","nlu_entity_label":""},{"variable_name":"devicetype","nlu_entity":"","nlu_entity_label":""},{"variable_name":"mobile_device_type","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>New Hire</nlu_intent>
+        <nlu_intent_label>New Hire</nlu_intent_label>
+        <nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model>
+        <nlu_model_label>OC Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cs_topic_language</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-09 17:41:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>12aba660db081910e6cb93afaa961964</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cs_topic_language_12aba660db081910e6cb93afaa961964</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-09 17:41:11</sys_updated_on>
+    </sys_cs_topic_language>
+</record_update>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom">
+    <sc_cat_item_user_criteria_mtom action="DELETE">
+        <sc_cat_item display_value="Remove End-User Account">1db9b28ddbcf0950e6cb93afaa961990</sc_cat_item>
+        <sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-05 15:41:58</sys_created_on>
+        <sys_id>32b0465ddb1b0150e6cb93afaa96199e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Remove End-User Account.Any User</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_32b0465ddb1b0150e6cb93afaa96199e</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-05 15:44:47</sys_updated_on>
+        <user_criteria display_value="Any User">f747c16473e72010565db0a8d4f6a7e2</user_criteria>
+    </sc_cat_item_user_criteria_mtom>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</application>
+        <file_path/>
+        <instance_id>85f207696f9e420056007b2f5d3ee415</instance_id>
+        <instance_name>saicdemo1</instance_name>
+        <name>sc_cat_item_user_criteria_mtom_32b0465ddb1b0150e6cb93afaa96199e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom"><sc_cat_item_user_criteria_mtom action="INSERT_OR_UPDATE"><sc_cat_item display_value="Remove End-User Account">1db9b28ddbcf0950e6cb93afaa961990</sc_cat_item><sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name><sys_created_by>adminjon</sys_created_by><sys_created_on>2022-05-05 15:41:58</sys_created_on><sys_id>32b0465ddb1b0150e6cb93afaa96199e</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Remove End-User Account.Any User</sys_name><sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package><sys_policy/><sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope><sys_update_name>sc_cat_item_user_criteria_mtom_32b0465ddb1b0150e6cb93afaa96199e</sys_update_name><sys_updated_by>system</sys_updated_by><sys_updated_on>2022-05-05 15:44:47</sys_updated_on><user_criteria display_value="Any User">f747c16473e72010565db0a8d4f6a7e2</user_criteria></sc_cat_item_user_criteria_mtom></record_update>]]></payload>
+        <payload_hash>49710175</payload_hash>
+        <record_name>Remove End-User Account.Any User</record_name>
+        <reverted_from/>
+        <source>c818be89dbcf0950e6cb93afaa961940</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-05 15:44:47</sys_created_on>
+        <sys_id>8c610e9d1bdf415055d178cf034bcbd4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18094e528970000001</sys_recorded_at>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-05 15:44:47</sys_updated_on>
+        <type>Catalog Item Available for</type>
+        <update_guid>80610e9d64df415085697b020c5970d4</update_guid>
+        <update_guid_history>80610e9d64df415085697b020c5970d4:49710175,beb0465d9e1b0150e3183b16247023a0:-428551553</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Remove End-User Account.">d2271a151b93815055d178cf034bcb92</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-05 17:19:57</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_user_criteria_mtom">sc_cat_item_user_criteria_mtom</sys_db_object>
+        <sys_id>531cc37ac1094c308f2293f7a9d19f91</sys_id>
+        <sys_metadata>32b0465ddb1b0150e6cb93afaa96199e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Remove End-User Account.</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_parent display_value="Remove End-User Account">1db9b28ddbcf0950e6cb93afaa961990</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_scope_delete display_value="">82a1a48d8e644a2684ce3d2556cef1a4</sys_scope_delete>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_32b0465ddb1b0150e6cb93afaa96199e</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_user_criteria_mtom_32b0465ddb1b0150e6cb93afaa96199e">8c610e9d1bdf415055d178cf034bcbd4</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-05 17:19:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

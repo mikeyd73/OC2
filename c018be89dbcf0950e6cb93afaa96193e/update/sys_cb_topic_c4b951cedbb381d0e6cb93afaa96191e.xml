@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "76444dd77c6041b69f5fa3e2624b2b77": {
+          "id": "76444dd77c6041b69f5fa3e2624b2b77",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "b01650f59e7646b1bf97207eee1afc96": {
+          "id": "b01650f59e7646b1bf97207eee1afc96",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "95cfb375f85b4af896f3398ee3f910bd": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to assign an office space?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "4ec4f6421a8f41f889b77e8170ec7e1e",
+          "id": "95cfb375f85b4af896f3398ee3f910bd",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "a6f74ce0689c45b78592100cc11347a4": {
+          "id": "a6f74ce0689c45b78592100cc11347a4",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "47915e5fc00a4536ba5779c55a4da169": {
+          "stepType": "ChoicePrompt",
+          "name": "teardown",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Is a teardown required?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "99af15e0f0a541fe961b11902c5e367b",
+          "id": "47915e5fc00a4536ba5779c55a4da169",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "909382067aa64b148531ea379ba87fe5": {
+          "id": "909382067aa64b148531ea379ba87fe5",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': 'd625b9ffc0a80165010725b451ef7e4e',\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'teardown': vaInputs.teardown.getValue(),\n\t}\n};\ncart.setRequestedFor(vaInputs.requesteduser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "9fd689b4770f4399842812737bbab763": {
+          "id": "9fd689b4770f4399842812737bbab763",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "5af24788b5394aac83877ae8db2bf764",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 71",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NDEwNDIzOTU1NyBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "9830133f46d74ad69e74f8ff2c24eab2": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "requestedUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who needs to be assigned an office space?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "c8b558044df345689980eceebca448e1",
+          "id": "9830133f46d74ad69e74f8ff2c24eab2",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "aae4c69ef3194537ab41b7efc818626f": {
+          "id": "aae4c69ef3194537ab41b7efc818626f",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Item",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket_number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "ef1ecc855d9d4ebebd35988a5dacf6b4",
+          "edgeType": "Edge",
+          "source": "95cfb375f85b4af896f3398ee3f910bd",
+          "target": "a6f74ce0689c45b78592100cc11347a4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8e1e95b72a6e449e87d3ffc77a6d00df",
+          "edgeType": "Branch",
+          "source": "a6f74ce0689c45b78592100cc11347a4",
+          "target": "b01650f59e7646b1bf97207eee1afc96",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "399d4b49614c4435938194969078f8a6",
+          "edgeType": "Edge",
+          "source": "47915e5fc00a4536ba5779c55a4da169",
+          "target": "909382067aa64b148531ea379ba87fe5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e282e88956f149cf8ef3444ab78ffabc",
+          "edgeType": "Edge",
+          "source": "76444dd77c6041b69f5fa3e2624b2b77",
+          "target": "9fd689b4770f4399842812737bbab763",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e03b84beb8754793ac0e9368290250b6",
+          "edgeType": "Edge",
+          "source": "9fd689b4770f4399842812737bbab763",
+          "target": "95cfb375f85b4af896f3398ee3f910bd",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d9bce9b9db474383b8b96eb82461df25",
+          "edgeType": "Branch",
+          "source": "a6f74ce0689c45b78592100cc11347a4",
+          "target": "9830133f46d74ad69e74f8ff2c24eab2",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "9327db8272794ae9b9548258c1c89de0",
+          "edgeType": "Edge",
+          "source": "9830133f46d74ad69e74f8ff2c24eab2",
+          "target": "47915e5fc00a4536ba5779c55a4da169",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b6252cae4462490394d79101a43dafa9",
+          "edgeType": "Edge",
+          "source": "909382067aa64b148531ea379ba87fe5",
+          "target": "aae4c69ef3194537ab41b7efc818626f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9afec17ee6434adf95b2bd74e3df91ba",
+          "edgeType": "Edge",
+          "source": "aae4c69ef3194537ab41b7efc818626f",
+          "target": "b01650f59e7646b1bf97207eee1afc96",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "4ec4f6421a8f41f889b77e8170ec7e1e": {
+      "id": "4ec4f6421a8f41f889b77e8170ec7e1e",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "99af15e0f0a541fe961b11902c5e367b": {
+      "id": "99af15e0f0a541fe961b11902c5e367b",
+      "name": "teardown",
+      "label": "Teardown",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "5af24788b5394aac83877ae8db2bf764": {
+      "id": "5af24788b5394aac83877ae8db2bf764",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "c8b558044df345689980eceebca448e1": {
+      "id": "c8b558044df345689980eceebca448e1",
+      "name": "requesteduser",
+      "label": "RequestedUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Assign Office Space</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Assign Office Space</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-01 17:18:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>c4b951cedbb381d0e6cb93afaa96191e</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Assign Office Space</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_c4b951cedbb381d0e6cb93afaa96191e</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-01 17:40:30</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=c4b951cedbb381d0e6cb93afaa96191e"/>
+</record_update>

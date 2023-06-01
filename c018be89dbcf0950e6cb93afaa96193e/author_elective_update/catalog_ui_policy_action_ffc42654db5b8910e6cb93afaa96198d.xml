@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="DELETE">
+        <catalog_item display_value="Remove End-User Account">76c46e14db5b8910e6cb93afaa96199c</catalog_item>
+        <catalog_variable>IO:83c4e254db5b8910e6cb93afaa96192c</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <mandatory>ignore</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-02 15:45:40</sys_created_on>
+        <sys_id>ffc42654db5b8910e6cb93afaa96198d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>scenerio_1</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_ffc42654db5b8910e6cb93afaa96198d</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-02 15:45:40</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Remove End-User Account UI Policy">f3c42654db5b8910e6cb93afaa96198a</ui_policy>
+        <variable>scenerio_1</variable>
+        <variable_set/>
+        <visible>ignore</visible>
+    </catalog_ui_policy_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</application>
+        <file_path/>
+        <instance_id>85f207696f9e420056007b2f5d3ee415</instance_id>
+        <instance_name>saicdemo1</instance_name>
+        <name>catalog_ui_policy_action_ffc42654db5b8910e6cb93afaa96198d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action"><catalog_ui_policy_action action="INSERT_OR_UPDATE"><catalog_item display_value="Remove End-User Account">76c46e14db5b8910e6cb93afaa96199c</catalog_item><catalog_variable>IO:83c4e254db5b8910e6cb93afaa96192c</catalog_variable><cleared>false</cleared><disabled>ignore</disabled><field/><mandatory>ignore</mandatory><order>100</order><sys_class_name>catalog_ui_policy_action</sys_class_name><sys_created_by>adminjon</sys_created_by><sys_created_on>2022-05-02 15:45:40</sys_created_on><sys_id>ffc42654db5b8910e6cb93afaa96198d</sys_id><sys_mod_count>1</sys_mod_count><sys_name>scenerio_1</sys_name><sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package><sys_policy/><sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope><sys_update_name>catalog_ui_policy_action_ffc42654db5b8910e6cb93afaa96198d</sys_update_name><sys_updated_by>adminjon</sys_updated_by><sys_updated_on>2022-05-02 15:45:40</sys_updated_on><table/><ui_policy display_value="Remove End-User Account UI Policy">f3c42654db5b8910e6cb93afaa96198a</ui_policy><variable>scenerio_1</variable><variable_set/><visible>ignore</visible></catalog_ui_policy_action></record_update>]]></payload>
+        <payload_hash>-342156635</payload_hash>
+        <record_name>scenerio_1</record_name>
+        <reverted_from/>
+        <source>c818be89dbcf0950e6cb93afaa961940</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-02 15:45:40</sys_created_on>
+        <sys_id>f3c42654db5b8910e6cb93afaa961997</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1808572e2ec0000001</sys_recorded_at>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-02 15:45:40</sys_updated_on>
+        <type>Catalog UI Policy Action</type>
+        <update_guid>f7c426549d5b891028be2cfdf6d2d596</update_guid>
+        <update_guid_history>f7c426549d5b891028be2cfdf6d2d596:-342156635,3bc426544f5b89102da335a22ada2a90:-540374459</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="scenerio_1">f4f92a5cdb5b8910e6cb93afaa9619a2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-02 16:08:08</sys_created_on>
+        <sys_db_object display_value="" name="catalog_ui_policy_action">catalog_ui_policy_action</sys_db_object>
+        <sys_id>5006da3cf5dd485099e2a6aafdda3100</sys_id>
+        <sys_metadata>ffc42654db5b8910e6cb93afaa96198d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>scenerio_1</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_scope_delete display_value="">82a1a48d8e644a2684ce3d2556cef1a4</sys_scope_delete>
+        <sys_update_name>catalog_ui_policy_action_ffc42654db5b8910e6cb93afaa96198d</sys_update_name>
+        <sys_update_version display_value="catalog_ui_policy_action_ffc42654db5b8910e6cb93afaa96198d">f3c42654db5b8910e6cb93afaa961997</sys_update_version>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-02 16:08:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

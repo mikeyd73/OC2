@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "8a1b2a3e60a14f399cf497ccf6c1faad": {
+          "id": "8a1b2a3e60a14f399cf497ccf6c1faad",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "510755841ddd4f5bae87393355644f8d": {
+          "id": "510755841ddd4f5bae87393355644f8d",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "6fdde4dcef7b4827b6cc4a3ae36be8ea": {
+          "stepType": "ChoicePrompt",
+          "name": "title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Are you wanting to enter a ticket for Desk Set Up?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "b6c279d8ab5d4d6fb891c17df1e90e79",
+          "id": "6fdde4dcef7b4827b6cc4a3ae36be8ea",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "53cd109c85e24d8ca319962300f3832b": {
+          "id": "53cd109c85e24d8ca319962300f3832b",
+          "stepType": "Prompt",
+          "name": "ergonomic_office",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please describe any ergonomic requirements"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "71e2b9f7f795459eb33cffd3a21dbe0e",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "6a451b259a5245648b5532b98dd17ca6": {
+          "id": "6a451b259a5245648b5532b98dd17ca6",
+          "stepType": "TextOutput",
+          "name": "Intro",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The facilities organization will set up your new desk with the following configuration:"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Docking Station"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Power Station"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Phone"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Office Chair"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "e910daa0cd4942bb8209456944ad9a98": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "requestingUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is requesting this set up?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "variableId": "18335766440d40878753b570546c1b22",
+          "id": "e910daa0cd4942bb8209456944ad9a98",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No Users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "22d438d586e44776b98ed5c72d8f3993": {
+          "id": "22d438d586e44776b98ed5c72d8f3993",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': '962967674ff38200086eeed18110c7e7',\t\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'ergonomic_office': vaInputs.ergonomic_office.getValue(),\n\t}\n};\ncart.setRequestedFor(vaInputs.requestinguser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=Number=checkoutVals.request_number;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "39d0ba3cf8944824b7b5634c4264842a": {
+          "id": "39d0ba3cf8944824b7b5634c4264842a",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Item",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID: "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket_number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "413c5ac1666e48b7accc8bd068112e4c": {
+          "id": "413c5ac1666e48b7accc8bd068112e4c",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "9ea757cb5bc6455cb78ea59c0899a3d4",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 68",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1MjQ1NjQ2MjQyMSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "f24c7a008cb447fda8a9de7c0d3a3474": {
+          "id": "f24c7a008cb447fda8a9de7c0d3a3474",
+          "stepType": "Decision",
+          "name": "Decision"
+        }
+      },
+      "edges": [
+        {
+          "id": "2a404b21e03d4e89bba528d9e2f1b2c6",
+          "edgeType": "Branch",
+          "source": "f24c7a008cb447fda8a9de7c0d3a3474",
+          "target": "6a451b259a5245648b5532b98dd17ca6",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "159e0ca910e14a39910dab5228a11bab",
+          "edgeType": "Edge",
+          "source": "6a451b259a5245648b5532b98dd17ca6",
+          "target": "e910daa0cd4942bb8209456944ad9a98",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c7dc33931fd64a5b897308bcf3846427",
+          "edgeType": "Edge",
+          "source": "e910daa0cd4942bb8209456944ad9a98",
+          "target": "53cd109c85e24d8ca319962300f3832b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "545774622284406aba2e6e3eecb11e2e",
+          "edgeType": "Edge",
+          "source": "53cd109c85e24d8ca319962300f3832b",
+          "target": "22d438d586e44776b98ed5c72d8f3993",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c791bdbe536d43219a4c22eece221631",
+          "edgeType": "Edge",
+          "source": "22d438d586e44776b98ed5c72d8f3993",
+          "target": "39d0ba3cf8944824b7b5634c4264842a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "773eaadb237d4c8d97fadfb41b571e7d",
+          "edgeType": "Edge",
+          "source": "39d0ba3cf8944824b7b5634c4264842a",
+          "target": "510755841ddd4f5bae87393355644f8d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "3814c5c685ba47d19ba35edf2cefaf50",
+          "edgeType": "Edge",
+          "source": "8a1b2a3e60a14f399cf497ccf6c1faad",
+          "target": "413c5ac1666e48b7accc8bd068112e4c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ecba244c6bc147e49b06863905532903",
+          "edgeType": "Edge",
+          "source": "413c5ac1666e48b7accc8bd068112e4c",
+          "target": "6fdde4dcef7b4827b6cc4a3ae36be8ea",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "41a8d860529f4cc58217460bec58a83a",
+          "edgeType": "Edge",
+          "source": "6fdde4dcef7b4827b6cc4a3ae36be8ea",
+          "target": "f24c7a008cb447fda8a9de7c0d3a3474",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9b2f230993fe4613abb3ca3d1365d341",
+          "edgeType": "Branch",
+          "source": "f24c7a008cb447fda8a9de7c0d3a3474",
+          "target": "510755841ddd4f5bae87393355644f8d",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "b6c279d8ab5d4d6fb891c17df1e90e79": {
+      "id": "b6c279d8ab5d4d6fb891c17df1e90e79",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "71e2b9f7f795459eb33cffd3a21dbe0e": {
+      "id": "71e2b9f7f795459eb33cffd3a21dbe0e",
+      "name": "ergonomic_office",
+      "label": "Ergonomic_office",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1MjQ1NTU3NTM3OCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "18335766440d40878753b570546c1b22": {
+      "id": "18335766440d40878753b570546c1b22",
+      "name": "requestinguser",
+      "label": "RequestingUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "9ea757cb5bc6455cb78ea59c0899a3d4": {
+      "id": "9ea757cb5bc6455cb78ea59c0899a3d4",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Desk Set Up</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Desk Set Up</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-13 15:17:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>eee7cbb31b5f4d1055d178cf034bcbfc</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>Desk Set Up</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_eee7cbb31b5f4d1055d178cf034bcbfc</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-25 16:42:47</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=eee7cbb31b5f4d1055d178cf034bcbfc"/>
+</record_update>

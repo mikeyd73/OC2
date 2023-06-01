@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.36",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "2a4f596b38814809adc2e89160e837da": {
+          "id": "2a4f596b38814809adc2e89160e837da",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "566a8d99868d4bf9b244a245fbfe4dcc": {
+          "id": "566a8d99868d4bf9b244a245fbfe4dcc",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "91d46f0d6e5b423b87a7afae3a267aea": {
+          "stepType": "ChoicePrompt",
+          "name": "Title",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Do you want to Package and Ship inter-office or to external addresses?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "10e268d74c514b4a8ac41eabd0fb816e",
+          "id": "91d46f0d6e5b423b87a7afae3a267aea",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "b2dec38bcd36465d84213d2743aa6e3d": {
+          "id": "b2dec38bcd36465d84213d2743aa6e3d",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "27ce3bb6eb1f4a3f801a5aae8b7db347": {
+          "id": "27ce3bb6eb1f4a3f801a5aae8b7db347",
+          "name": "Order Item",
+          "script": "(function execute() {\n\nvar cart = new sn_sc.CartJS();\nvar item = { // Note that values using CartJS are instantiated via a JSON object\n\t'sysparm_id': '10b44eb6c6112276005acf13b5c13274',\n\t'sysparm_quantity': '1',\n\t'variables': {\n\t\t'parcel_details': vaInputs.parcel_details.getValue(),\n\t\t'type': vaInputs.shipping_type.getValue(),\n\t\t'internal_destination': vaInputs.internal_destination.getValue(),\n\t\t'line_one': vaInputs.line_one.getValue(),\n\t\t'city': vaInputs.city.getValue(),\n\t\t'postcode': vaInputs.postcode.getValue(),\n\t}\n};\ncart.setRequestedFor(vaInputs.requesteduser);\nvar cartVals = cart.addToCart(item); // The addToCart function returns a JSON object reflecting the status of the cart\nvar checkoutVals = cart.checkoutCart(); // The checkoutCart function returns a JSON object with info about the submitted cart, contents varying if two-step checkout is active\n\nvaInputs.ticket_number=checkoutVals.request_number;\n})()",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "bda7d9312111483a98c853ce63b7deb7": {
+          "id": "bda7d9312111483a98c853ce63b7deb7",
+          "stepType": "SlotFillPrompt",
+          "name": "ticket_number",
+          "type": "string",
+          "withNluUserInput": false,
+          "skipIfFulfilled": true,
+          "variableId": "e7486ef9b69a4019a7f075c0f8750abf",
+          "values": {
+            "supportedControlNote": "",
+            "name": "",
+            "variableName": "",
+            "label": "Text 52",
+            "inputType": {
+              "format": "Text",
+              "script": ""
+            },
+            "secure": false,
+            "encryptionHashFunction": "SHA-256",
+            "encryptionSalt": {
+              "value": "MTY1NTE0NjI1MTg0OCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+              "mode": "simple"
+            },
+            "prompt": {
+              "mode": "simple",
+              "value": "Set by NLU"
+            },
+            "withNluUserInput": false,
+            "skipIfFulfilled": false,
+            "node_id": "",
+            "variable_name": "",
+            "acknowledgeMsg": {
+              "value": "",
+              "mode": "simple"
+            },
+            "defaultValue": {
+              "value": "",
+              "mode": "simple"
+            },
+            "confirmMessage": {
+              "value": "",
+              "mode": "simple"
+            },
+            "applicabilityNote": "By default, this node will be shown in the conversation and input from the user will be required.",
+            "applicability": {
+              "mode": "script",
+              "value": "(function() { return false; })()"
+            },
+            "skippable": {
+              "value": "",
+              "mode": "query"
+            }
+          },
+          "hidden": true
+        },
+        "52253bd6048947adac2dde2df135a107": {
+          "id": "52253bd6048947adac2dde2df135a107",
+          "stepType": "TextOutput",
+          "name": "Display Ticket Item",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The created ticket has ID:  "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.ticket_number}}",
+                      "displayValue": "Input Variables➛Ticket_number"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "59e72a4e3b3b4b80806ad9b27821fd2c": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "requestedUser",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Who is requesting this service?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "58efae8b26fc4ff9ad64f6ab034ba2a3",
+          "id": "59e72a4e3b3b4b80806ad9b27821fd2c",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No users found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "d3db879afa974000b12ce37f620dc326": {
+          "id": "d3db879afa974000b12ce37f620dc326",
+          "stepType": "Prompt",
+          "name": "parcel_details",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What are the parcel details"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "a2d0dd3c9e3a4d3da4c9b00ab0036cc0",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "d84a8eada1c64d09bbfecb276a5788cb": {
+          "stepType": "ChoicePrompt",
+          "name": "shipping_type",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the shipping type"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "e0af5a1829624be0a74641679e9385ac",
+          "id": "d84a8eada1c64d09bbfecb276a5788cb",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "f9ee9e95a40242f7a34c1619fd74352b": {
+          "id": "f9ee9e95a40242f7a34c1619fd74352b",
+          "stepType": "Prompt",
+          "name": "line_one",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the address? (City and State will be asked later)"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "456db042781d4ec29df065122a2aca19",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "cb794b01d6854340a3a3c5d512e7ec78": {
+          "id": "cb794b01d6854340a3a3c5d512e7ec78",
+          "stepType": "Prompt",
+          "name": "city",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What city is this being shipped to"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "c63f942d21484deead76f431b6a51458",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "37782b47c29848dfac364ebc36abf9f3": {
+          "id": "37782b47c29848dfac364ebc36abf9f3",
+          "stepType": "Prompt",
+          "name": "postcode",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Postcode"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "beab0e3773c74a79b90f5e924354c4a7",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "1db374a4ea424d40964f53345d6b947c": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "internal_destination",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What is the destination"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "0d7717e56b764d0984b32529c6bac1ec",
+          "id": "1db374a4ea424d40964f53345d6b947c",
+          "mode": "glide_record",
+          "script": "",
+          "metadataScript": "",
+          "cardData": {},
+          "noRecordsResponseMsg": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "No records were found"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_idANYTHING"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "1745303b3b424b78b9f8dd9dcedb2cb5": {
+          "id": "1745303b3b424b78b9f8dd9dcedb2cb5",
+          "stepType": "Decision",
+          "name": "Decision"
+        }
+      },
+      "edges": [
+        {
+          "id": "524466df2b0d4cb493a9d43a146fc5ea",
+          "edgeType": "Edge",
+          "source": "d84a8eada1c64d09bbfecb276a5788cb",
+          "target": "1745303b3b424b78b9f8dd9dcedb2cb5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "81dded361f5c4e0fa964dd452fbdfefd",
+          "edgeType": "Edge",
+          "source": "d3db879afa974000b12ce37f620dc326",
+          "target": "27ce3bb6eb1f4a3f801a5aae8b7db347",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "19ad1e082cf7405f98dbbf1d53124e15",
+          "edgeType": "Edge",
+          "source": "27ce3bb6eb1f4a3f801a5aae8b7db347",
+          "target": "52253bd6048947adac2dde2df135a107",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5fb5631c2f4648b4b50cc9a35b38e919",
+          "edgeType": "Edge",
+          "source": "91d46f0d6e5b423b87a7afae3a267aea",
+          "target": "b2dec38bcd36465d84213d2743aa6e3d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5d53d5ada9014b178b061f97513c556c",
+          "edgeType": "Branch",
+          "source": "b2dec38bcd36465d84213d2743aa6e3d",
+          "target": "566a8d99868d4bf9b244a245fbfe4dcc",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=No",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "f1367dc4f6d140529223c140809b6f27",
+          "edgeType": "Edge",
+          "source": "2a4f596b38814809adc2e89160e837da",
+          "target": "bda7d9312111483a98c853ce63b7deb7",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7c9d8a17ca374b27a9e94a6539cb3579",
+          "edgeType": "Edge",
+          "source": "bda7d9312111483a98c853ce63b7deb7",
+          "target": "91d46f0d6e5b423b87a7afae3a267aea",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "73e15feaa0c14269b314537497026fdb",
+          "edgeType": "Edge",
+          "source": "52253bd6048947adac2dde2df135a107",
+          "target": "566a8d99868d4bf9b244a245fbfe4dcc",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ea449f4de8b64f8b98175611dea406f1",
+          "edgeType": "Branch",
+          "source": "b2dec38bcd36465d84213d2743aa6e3d",
+          "target": "59e72a4e3b3b4b80806ad9b27821fd2c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.title=Yes",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "c928c28e87dc4b989dff62ebbdc3019c",
+          "edgeType": "Edge",
+          "source": "59e72a4e3b3b4b80806ad9b27821fd2c",
+          "target": "d84a8eada1c64d09bbfecb276a5788cb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "27f113bebfef45c28e91722b98ca3482",
+          "edgeType": "Edge",
+          "source": "f9ee9e95a40242f7a34c1619fd74352b",
+          "target": "cb794b01d6854340a3a3c5d512e7ec78",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b5640cad89c74fa395cd4672809fb1d7",
+          "edgeType": "Edge",
+          "source": "cb794b01d6854340a3a3c5d512e7ec78",
+          "target": "37782b47c29848dfac364ebc36abf9f3",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1ce5a77311b249009437211a176d054e",
+          "edgeType": "Edge",
+          "source": "37782b47c29848dfac364ebc36abf9f3",
+          "target": "d3db879afa974000b12ce37f620dc326",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7efcd56e1e29446ba10f387c0c7fc5f9",
+          "edgeType": "Edge",
+          "source": "1db374a4ea424d40964f53345d6b947c",
+          "target": "d3db879afa974000b12ce37f620dc326",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ac1b342b6abf424c9b1099818fa42d3b",
+          "edgeType": "Branch",
+          "source": "1745303b3b424b78b9f8dd9dcedb2cb5",
+          "target": "1db374a4ea424d40964f53345d6b947c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.shipping_type=internal",
+            "mode": "query"
+          },
+          "label": "Internal"
+        },
+        {
+          "id": "a053641b6f3048baaf6e93183308e8fd",
+          "edgeType": "Branch",
+          "source": "1745303b3b424b78b9f8dd9dcedb2cb5",
+          "target": "f9ee9e95a40242f7a34c1619fd74352b",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.shipping_type=external",
+            "mode": "query"
+          },
+          "label": "External"
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "10e268d74c514b4a8ac41eabd0fb816e": {
+      "id": "10e268d74c514b4a8ac41eabd0fb816e",
+      "name": "title",
+      "label": "Title",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "e7486ef9b69a4019a7f075c0f8750abf": {
+      "id": "e7486ef9b69a4019a7f075c0f8750abf",
+      "name": "ticket_number",
+      "label": "Ticket_number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "58efae8b26fc4ff9ad64f6ab034ba2a3": {
+      "id": "58efae8b26fc4ff9ad64f6ab034ba2a3",
+      "name": "requesteduser",
+      "label": "RequestedUser",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "a2d0dd3c9e3a4d3da4c9b00ab0036cc0": {
+      "id": "a2d0dd3c9e3a4d3da4c9b00ab0036cc0",
+      "name": "parcel_details",
+      "label": "Parcel_details",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NTE0Nzk0NTU3NSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "e0af5a1829624be0a74641679e9385ac": {
+      "id": "e0af5a1829624be0a74641679e9385ac",
+      "name": "shipping_type",
+      "label": "Shipping_type",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Inter-office",
+          "value": "internal"
+        },
+        {
+          "label": "External address",
+          "value": "external",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "456db042781d4ec29df065122a2aca19": {
+      "id": "456db042781d4ec29df065122a2aca19",
+      "name": "line_one",
+      "label": "Line_one",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NTIyMzQ1MTkwOSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "c63f942d21484deead76f431b6a51458": {
+      "id": "c63f942d21484deead76f431b6a51458",
+      "name": "city",
+      "label": "City",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NTIyMzQ5NzQ4NSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "beab0e3773c74a79b90f5e924354c4a7": {
+      "id": "beab0e3773c74a79b90f5e924354c4a7",
+      "name": "postcode",
+      "label": "Postcode",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY1NTIyNzk4Mzk1MiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "0d7717e56b764d0984b32529c6bac1ec": {
+      "id": "0d7717e56b764d0984b32529c6bac1ec",
+      "name": "internal_destination",
+      "label": "Internal_destination",
+      "varType": "reference",
+      "table": "cmn_location",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Packaging and Shipping</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Packaging and Shipping</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>public</roles>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-13 18:47:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b921af39dbcc1510e6cb93afaa9619de</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Packaging and Shipping</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_b921af39dbcc1510e6cb93afaa9619de</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-14 19:14:06</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=b921af39dbcc1510e6cb93afaa9619de"/>
+</record_update>

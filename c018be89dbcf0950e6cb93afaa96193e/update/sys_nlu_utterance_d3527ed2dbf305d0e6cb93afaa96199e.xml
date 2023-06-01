@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_nlu_utterance">
+    <sys_nlu_utterance action="INSERT_OR_UPDATE">
+        <intent display_value="Desk Set Up">57f78bf31b5f4d1055d178cf034bcbdf</intent>
+        <original_utterance/>
+        <primary_utterance/>
+        <sys_class_name>sys_nlu_utterance</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-06-02 18:24:08</sys_created_on>
+        <sys_id>d3527ed2dbf305d0e6cb93afaa96199e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Desk ready</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_nlu_utterance_d3527ed2dbf305d0e6cb93afaa96199e</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-02 18:24:08</sys_updated_on>
+        <utterance>Get Desk ready</utterance>
+    </sys_nlu_utterance>
+</record_update>

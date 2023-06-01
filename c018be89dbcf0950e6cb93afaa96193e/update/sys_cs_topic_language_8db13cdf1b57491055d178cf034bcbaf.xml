@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
+    <sys_cs_topic_language action="INSERT_OR_UPDATE">
+        <cs_topic_id display_value="Paper and Supplies">b4b13cdf1b57491055d178cf034bcba6</cs_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"variable_name":"title","nlu_entity":"","nlu_entity_label":""},{"variable_name":"order_item","nlu_entity":"","nlu_entity_label":""},{"variable_name":"copier_reams","nlu_entity":"","nlu_entity_label":""},{"variable_name":"screen_wipes","nlu_entity":"","nlu_entity_label":""},{"variable_name":"pens","nlu_entity":"","nlu_entity_label":""},{"variable_name":"additional_requirements","nlu_entity":"","nlu_entity_label":""},{"variable_name":"requestedfor","nlu_entity":"","nlu_entity_label":""},{"variable_name":"userrequestingchoice","nlu_entity":"","nlu_entity_label":""},{"variable_name":"requestingquestion","nlu_entity":"","nlu_entity_label":""},{"variable_name":"requestinguserquestion","nlu_entity":"","nlu_entity_label":""},{"variable_name":"requesteduser","nlu_entity":"","nlu_entity_label":""},{"variable_name":"ticket_number","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>Paper and Supplies</nlu_intent>
+        <nlu_intent_label>Paper and Supplies</nlu_intent_label>
+        <nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model>
+        <nlu_model_label>OC Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cs_topic_language</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-11 15:04:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>8db13cdf1b57491055d178cf034bcbaf</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cs_topic_language_8db13cdf1b57491055d178cf034bcbaf</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-06-09 17:41:23</sys_updated_on>
+    </sys_cs_topic_language>
+</record_update>

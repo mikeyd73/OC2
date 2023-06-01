@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_nlu_utterance">
+    <sys_nlu_utterance action="INSERT_OR_UPDATE">
+        <intent display_value="Server Tuning">8033f365db3301d0e6cb93afaa9619da</intent>
+        <original_utterance/>
+        <primary_utterance/>
+        <sys_class_name>sys_nlu_utterance</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-31 15:12:39</sys_created_on>
+        <sys_id>f2537765db3301d0e6cb93afaa961998</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Server Tuning</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_nlu_utterance_f2537765db3301d0e6cb93afaa961998</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-31 15:12:39</sys_updated_on>
+        <utterance>Server Tuning</utterance>
+    </sys_nlu_utterance>
+</record_update>

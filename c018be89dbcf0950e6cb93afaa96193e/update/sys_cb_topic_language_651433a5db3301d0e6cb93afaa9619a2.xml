@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic_language">
+    <sys_cb_topic_language action="INSERT_OR_UPDATE">
+        <cb_topic_id display_value="Server Tuning">f6133be1db3301d0e6cb93afaa961945</cb_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"node_id":"b8f95a18d0f342898f9f7051e5a7b0c0","variable_name":"title","nlu_entity":"","nlu_entity_label":""},{"node_id":"a8f8dcf1398b47cab9707abaa18fcd0f","variable_name":"vm","nlu_entity":"","nlu_entity_label":""},{"node_id":"0642328673244e4f8e86732e7a5cda1b","variable_name":"ticket_number","nlu_entity":"","nlu_entity_label":""},{"node_id":"30bd4d22470b4dd686b5f947bbe0e894","variable_name":"cost_center","nlu_entity":"","nlu_entity_label":""},{"node_id":"2907b09b43f24096b2f5ccb308180c71","variable_name":"cost_center","nlu_entity":"","nlu_entity_label":""},{"node_id":"2e76a15d74a447a988fc12dd09a162bf","variable_name":"primary_contact","nlu_entity":"","nlu_entity_label":""},{"node_id":"709911926df14363bbfab69187ac8d63","variable_name":"business_purpose_choice","nlu_entity":"","nlu_entity_label":""},{"node_id":"7a3b8a218fc14a30b0354f0dfb074dc7","variable_name":"ktlo","nlu_entity":"","nlu_entity_label":""},{"node_id":"92d1f46fd39840bc913cb581441c6f2f","variable_name":"special_projects","nlu_entity":"","nlu_entity_label":""},{"node_id":"d6e02695d3a645d78923abc17ff97ebd","variable_name":"testing","nlu_entity":"","nlu_entity_label":""},{"node_id":"e260d3cffd3a4678b3b9b64617cedffb","variable_name":"other","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>Server Tuning</nlu_intent>
+        <nlu_intent_label>Server Tuning</nlu_intent_label>
+        <nlu_model>ml_x_saic4_x_saic4_oc_content_global_e93ee136dbcf0110e6cb93afaa961924</nlu_model>
+        <nlu_model_label>OC Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cb_topic_language</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-05-31 15:15:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>651433a5db3301d0e6cb93afaa9619a2</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_cb_topic_language_651433a5db3301d0e6cb93afaa9619a2</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-05-31 17:41:08</sys_updated_on>
+    </sys_cb_topic_language>
+</record_update>

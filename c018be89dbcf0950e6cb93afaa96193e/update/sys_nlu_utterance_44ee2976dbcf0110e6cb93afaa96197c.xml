@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_nlu_utterance">
+    <sys_nlu_utterance action="INSERT_OR_UPDATE">
+        <intent display_value="Remove End User Account">d9ae2936dbcf0110e6cb93afaa96196a</intent>
+        <original_utterance/>
+        <primary_utterance/>
+        <sys_class_name>sys_nlu_utterance</sys_class_name>
+        <sys_created_by>adminjon</sys_created_by>
+        <sys_created_on>2022-04-27 19:59:09</sys_created_on>
+        <sys_id>44ee2976dbcf0110e6cb93afaa96197c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Remove User Account</sys_name>
+        <sys_package display_value="OC Content Pack" source="x_saic4_oc_content">c018be89dbcf0950e6cb93afaa96193e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OC Content Pack">c018be89dbcf0950e6cb93afaa96193e</sys_scope>
+        <sys_update_name>sys_nlu_utterance_44ee2976dbcf0110e6cb93afaa96197c</sys_update_name>
+        <sys_updated_by>adminjon</sys_updated_by>
+        <sys_updated_on>2022-04-27 19:59:09</sys_updated_on>
+        <utterance>Remove User Account</utterance>
+    </sys_nlu_utterance>
+</record_update>
